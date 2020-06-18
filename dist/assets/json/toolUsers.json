@@ -1,0 +1,29 @@
+[
+    {
+        "first_name": "SARAVANAN",
+        "last_name": "CHANDRABALU",
+        "total hours": 0,
+        "utilization": 0,
+        "is_active": true,
+        "length": 3,
+        "User ID": 4
+    },
+    {
+        "first_name": "DHIRENDRA",
+        "last_name": "KUMAR",
+        "total hours": 0,
+        "utilization": 0,
+        "is_active": true,
+        "length": 3,
+        "User ID": 36
+    },
+    {
+        "first_name": "VIVEK",
+        "last_name": "R RAO",
+        "total hours": 0,
+        "utilization": 0,
+        "is_active": true,
+        "length": 3,
+        "User ID": 59
+    }
+]

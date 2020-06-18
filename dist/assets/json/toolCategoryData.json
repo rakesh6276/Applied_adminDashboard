@@ -1,0 +1,9 @@
+{
+    "Tool_Threshold": 20,
+    "Productive": -0.0,
+    "Tool_efficiency": false,
+    "Bay_number": "1",
+    "Bay": "Console 3",
+    "Tool_Category": "Process",
+    "Tool_Name": "MDP Chamber"
+}
