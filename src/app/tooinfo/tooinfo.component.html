@@ -1,0 +1,474 @@
+<!-- <h1>{{toolIdGeneral}}</h1> -->
+<style>
+  /* .idle{
+    background: #ff9999;
+  }
+  .idle:hover{
+    background: #ff9999;
+  }
+  
+  .install{
+    background: #ffe680;
+  }
+  .install:hover{
+    background: #ffe680;
+  }
+  
+  .productive{
+    background: #C7E596;
+  }
+  
+  .productive:hover{
+    background: #C7E596;
+  }
+  
+  .maintenance{
+    background: #b9d7f8;
+  }
+  
+  .maintenance:hover{
+    background: #b9d7f8;
+  } */
+  </style>
+  <div>
+    <div>
+      <h3 class="headingStyle1"><span class="glyphicon glyphicon-wrench"></span>{{_toolname}}</h3>
+    </div>
+    <!-- <input type="file" class="form-control"
+                        name="image" 
+                        (change)="onImageChange($event.target.files)"
+                         placeholder="Select an image" required>
+                         <span class="input-group-addon">
+                            <button class="" 
+                            (click)="sendIdGetImage()">
+                            Upload</button>
+                        </span> -->
+                     
+    <div class="col-md-12" style="margin: 25px 0px 0px 0px;">
+        <div class="col-md-4" id="photpanel">
+            <div class="col-md-10">
+                <div class="container">
+                    <img src="{{_toolImage}}" alt="No Image" class="image">
+                    <div class="overlay">
+                      <div class="text">
+                        
+                          <i class="material-icons iconStyle" 
+                          style="font-size:48px;box-shadow:0px 4px 27px 0px #00000069;" type="file">add_a_photo</i>
+                          <input style="font-size: 11px;
+                          margin: 30px 0px 0px -42px;
+                          font-family: cursive;
+                          box-shadow: 0px 4px 27px 0px #00000069;
+                          width: 160%;" type="file" 
+                          accept="image/png, image/jpeg, image/jpg"  
+                          name="image" 
+                        (change)="onImageChange($event.target.files)"
+                        />
+                        <button class="btn uploadstyle" 
+                            (click)="sendIdGetImage()">
+                            Upload</button>
+                            
+                          
+                        
+                      </div>
+                    </div>
+                  </div>
+                
+                <a class="btn myButtoninfo" style="padding: 9px 9px 9px 9px;font-size: 20px;
+                color: #00000024;box-shadow: 0px 0px 22px 0px #0000001f;"
+                 [ngClass]="{'idle' : too55 === 'ID'}" (click)="smModal1.show()" ngDefaultControl>Idle</a>
+                <br>
+                <a class="btn myButtoninfo" style="padding: 9px 9px 9px 9px;color: #00000024;
+                font-size: 20px;    box-shadow: 0px 0px 22px 0px #0000001f;" 
+                [ngClass]="{'install' : too55 === 'IN'}" 
+                 (click)="smModal2.show()" ngDefaultControl>Installation</a><br>
+                <a class="btn myButtoninfo" style="padding: 9px 9px 9px 9px;color: #00000024;
+                font-size: 20px;    box-shadow: 0px 0px 22px 0px #0000001f;" 
+                [ngClass]="{'productive' : too55 === 'PR'}" 
+                 (click)="smModal3.show()" ngDefaultControl>Productive</a><br>
+                <a class="btn myButtoninfo"style="padding: 9px 9px 9px 9px;color: #00000024;
+                font-size: 20px;    box-shadow: 0px 0px 22px 0px #0000001f;" 
+                [ngClass]="{'maintenance' : too55 === 'MA'}" 
+                 (click)="smModal4.show()" ngDefaultControl>Maintenance</a>
+            </div>
+        </div>
+        <div class="col-md-8" id="loadersPanel">
+        
+        
+         
+        
+  
+      <ul class="nav nav-tabs uldynamic" [ngClass]="{'idle' : too55 === 'ID',
+       'productive' : too55 === 'PR', 'install' : too55 === 'IN',
+        'maintenance' : too55 === 'MA'}">
+        <i style="font-size:24px;margin: 0px 2px -3px 18px;" class="fa">&#xf1fe;</i>
+          <span class="realclock">Real-Time Data {{clock  | date:'medium'}}</span>
+        <li class="active">
+          <a data-toggle="tab" click="cumupie()" href="#home">Cumulative</a>
+        </li>
+        <li>
+          <a data-toggle="tab" click="qtrpie()" href="#menu1">Quaterly</a>
+        </li>
+      </ul>
+    
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div id="topCircle">
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_cummulative.Productive]
+                  [radius]="100"
+                  [outerStrokeWidth]="6"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#7ecc00'"
+                  [innerStrokeColor]="'#C7E596'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"
+                  [showBackground]="true"
+                  [backgroundColor]="'#C7E596'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Productive'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                  
+                ></circle-progress></div>
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_cummulative.Installation]
+                  [radius]="100"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#ffcc00'"
+                  [innerStrokeColor]="'#ffe680'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"#b9d7f8
+                  [showBackground]="true"
+                  [backgroundColor]="'#ffe680'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Installation'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                 
+                ></circle-progress></div>
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_cummulative.Idle]
+                  [radius]="100"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#ff6666'"
+                  [innerStrokeColor]="'#ff9999'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"
+                  [showBackground]="true"
+                  [backgroundColor]="'#ff9999'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Idle'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                ></circle-progress></div>
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_cummulative.Maintenance]
+                  [radius]="100"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#74aef1'"
+                  [innerStrokeColor]="'#b9d7f8'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"
+                  [showBackground]="true"
+                  [backgroundColor]="'#b9d7f8'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Maintenance'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                ></circle-progress></div>
+                  
+              </div>
+  
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <div id="topCircle">
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_quaterly.InUse_percent]
+                  [radius]="100"
+                  [outerStrokeWidth]="6"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#7ecc00'"
+                  [innerStrokeColor]="'#C7E596'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"
+                  [showBackground]="true"
+                  [backgroundColor]="'#C7E596'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Productive'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                  
+                ></circle-progress></div>
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_quaterly.Installation_percent]
+                  [radius]="100"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#ffcc00'"
+                  [innerStrokeColor]="'#ffe680'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"#b9d7f8
+                  [showBackground]="true"
+                  [backgroundColor]="'#ffe680'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Installation'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                 
+                ></circle-progress></div>
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_quaterly.Idle_percent]
+                  [radius]="100"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#ff6666'"
+                  [innerStrokeColor]="'#ff9999'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"
+                  [showBackground]="true"
+                  [backgroundColor]="'#ff9999'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Idle'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                ></circle-progress></div>
+                <div class="col-md-3"><circle-progress
+                  [percent]=[_quaterly.Maintenance_percent]
+                  [radius]="100"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#74aef1'"
+                  [innerStrokeColor]="'#b9d7f8'"
+                  [animation]="true"
+                  [animationDuration]="400"
+                  [showTitle]="true"
+                  [showBackground]="true"
+                  [backgroundColor]="'#b9d7f8'"
+                  [titleColor]="'#666666'"
+                  [titleFontSize]="40"
+                  [subtitle]="'Maintenance'"
+                  [subtitleColor]="'black'"
+                  [subtitleFontSize]='18'
+                ></circle-progress></div>
+                  
+              </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+   </div>
+  
+  
+   <div class="col-md-12" style="margin: 91px 0px 0px 20px;">
+    <div class="panel-group col-md-6" id="mainpanel" data-toggle="collapse" href="#collapse1">
+      <div class="paneleffect">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a>Click for Users</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <ul class="list-group">
+            <li class="list-group-item" style="font-weight: bold;"
+            *ngFor="let users of toolUsersdata">{{users.first_name}} {{users.last_name}}</li>
+            <!-- <li class="list-group-item">Two</li>
+            <li class="list-group-item">Three</li> -->
+          </ul>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel-group col-md-6" id="mainpanel" data-toggle="collapse" href="#collapse2">
+      <div class="paneleffect">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a>Click for Projects</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <ul class="list-group">
+            <li class="list-group-item" style="font-weight: bold;"
+            *ngFor="let projects of toolProjectsdata">{{projects.project_name}}</li>
+          </ul>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-12" id="trendsStyle">
+  <h2 class="headingStyle1" style="text-align: left;">Trends</h2>
+  
+  <!-- <div class="input-group col-lg-4 col-md-4" id="tooltrend" style="margin-bottom: 20px;">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    <input date-range-picker name="daterange5" class="date-picker" type="text"
+           ngModel="date" options="opts" style="padding: 3px;" required/>
+  </div> -->
+  
+  <div id="reportrange" class="">
+      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+      <span></span> <b class="caret"></b>
+  </div>
+  
+  <div>
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  </div>
+  
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+     <p>{{messageresponse}}</p>
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+      <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+     </div>
+     
+    
+   
+  </ng-template> -->
+  
+  <div bsModal #smModal1="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm</h4>
+            <button type="button" class="close pull-right" (click)="smModal1.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <p>Do you want to confirm?</p>
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+          <button type="submit" class="btn btn-success" (click)="changeStatus(_tool55,'ID');smModal1.hide()"
+            style="margin-right: 15px;">Submit</button>
+       
+          <button class="btn btn-danger" (click)="smModal1.hide()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div bsModal #smModal2="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm</h4>
+            <button type="button" class="close pull-right" (click)="smModal2.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <p>Do you want to confirm?</p>
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+          <button type="submit" class="btn btn-success" (click)="changeStatus(_tool55,'IN');smModal2.hide()"
+            style="margin-right: 15px;">Submit</button>
+       
+          <button class="btn btn-danger" (click)="smModal2.hide()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div bsModal #smModal3="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm</h4>
+            <button type="button" class="close pull-right" (click)="smModal3.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <p>Do you want to confirm?</p>
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+          <button type="submit" class="btn btn-success" (click)="changeStatus(_tool55,'PR');smModal3.hide()"
+            style="margin-right: 15px;">Submit</button>
+       
+          <button class="btn btn-danger" (click)="smModal3.hide()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div bsModal #smModal4="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm</h4>
+            <button type="button" class="close pull-right" (click)="smModal4.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <p>Do you want to confirm?</p>
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+          <button type="submit" class="btn btn-success" (click)="changeStatus(_tool55,'MA');smModal4.hide()"
+            style="margin-right: 15px;">Yes</button>
+       
+          <button class="btn btn-danger" (click)="smModal4.hide()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       {{messageresponse}}
+      </div>
+    </ng-template>
+      
+  

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 256,
+        "name": "Console 2",
+        "mac_id": "b8:27:eb:68:90:1f",
+        "location": null,
+        "is_active": true,
+        "created_on": "2017-02-08T22:38:53.699828+05:30",
+        "updated_on": "2017-11-21T18:05:00.679091+05:30"
+    },
+    {
+        "id": 255,
+        "name": "Console 6",
+        "mac_id": "b8:27:eb:9c:62:ee",
+        "location": null,
+        "is_active": true,
+        "created_on": "2017-02-08T20:40:10.221836+05:30",
+        "updated_on": "2017-11-22T11:15:39.481883+05:30"
+    },
+    {
+        "id": 242,
+        "name": "Console 3",
+        "mac_id": "b8:27:eb:a1:bd:75",
+        "location": "bay33",
+        "is_active": true,
+        "created_on": "2017-02-07T15:20:25.180509+05:30",
+        "updated_on": "2017-11-20T15:17:28.542899+05:30"
+    },
+    {
+        "id": 243,
+        "name": "Console 5",
+        "mac_id": "b8:27:eb:0f:0f:76",
+        "location": "bay10",
+        "is_active": true,
+        "created_on": "2017-02-07T15:28:40.443448+05:30",
+        "updated_on": "2017-11-20T15:28:08.797619+05:30"
+    },
+    {
+        "id": 244,
+        "name": "Console 7",
+        "mac_id": "b8:27:eb:09:b0:9a",
+        "location": "bay21",
+        "is_active": true,
+        "created_on": "2017-02-07T15:32:09.569608+05:30",
+        "updated_on": "2017-11-21T10:45:17.325015+05:30"
+    },
+    {
+        "id": 245,
+        "name": "Console 4",
+        "mac_id": "b8:27:eb:38:f9:a4",
+        "location": "bay3",
+        "is_active": true,
+        "created_on": "2017-02-07T15:44:37.652170+05:30",
+        "updated_on": "2017-11-21T17:15:33.163267+05:30"
+    },
+    {
+        "id": 257,
+        "name": "Null",
+        "mac_id": "FF:FF:FF:FF:FF:00",
+        "location": "BNG",
+        "is_active": false,
+        "created_on": "2017-08-04T13:27:33.092669+05:30",
+        "updated_on": "2018-02-20T14:11:08.692676+05:30"
+    },
+    {
+        "id": 241,
+        "name": "Console 1",
+        "mac_id": "b8:27:eb:9b:d8:bc",
+        "location": "bay27",
+        "is_active": true,
+        "created_on": "2017-02-07T14:38:25.626783+05:30",
+        "updated_on": "2018-02-20T17:55:08.362247+05:30"
+    }
+]

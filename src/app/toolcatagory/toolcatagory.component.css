@@ -1,0 +1,135 @@
+#welcome{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: se;
+    color: saddlebrown;
+    margin: 47px 0px 28px 0px;
+    text-shadow: -3px 5px 7px #00000030;
+ }
+
+.thumbnail{
+ height: 187px;
+    width: 345px;
+    float: left;
+    padding: 4px;
+    margin: 49px 0px 49px 35px;
+    box-shadow: 0px 14px 39px 0px #0000004f;
+    font-size: 21px;
+    font-weight: bold;
+    font-variant: petite-caps;
+}
+
+.thumbnail span{
+    font-size: 45px;
+    margin: 49px 0px 0px 38px;
+    color: #00000082;
+    
+}
+
+.thumbnail p:nth-child(1){
+margin: 10px 0px 34px 19px;
+color: black;
+}
+
+.thumbnail i {
+    font-size: 58px;
+    margin: 0px 0px 0px 53px;
+    color: #0000006e;;
+}
+.thumbnail svg {
+    font-size: 58px;
+    margin: 0px 0px 0px 53px;
+    color: #0000006e;
+}
+
+
+.nav-tabs>li {
+    float: right;
+    margin-bottom: -1px;
+}
+
+
+.nav-tabs {
+    border: none;
+}
+
+
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: snow;
+    cursor: pointer;
+    box-shadow: 3px 0px 15px 0px rgba(0, 0, 0, 0.35);
+    background: #1f446f;
+    font-weight: bold;
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 0.5px solid black;
+    border-radius: 4px 4px 0 0;
+    color: black;
+    font-weight: bold;
+}
+
+
+@media (min-width: 800px) and (max-width: 1440px) {
+    .thumbnail{
+        height: 158px;
+           width: 218px;
+           float: left;
+           padding: 4px;
+           margin: 49px 0px 49px 37px;
+           box-shadow: 0px 14px 39px 0px #0000004f;
+           font-size: 18px;
+           font-weight: bold;
+           font-variant: petite-caps;
+       }
+
+       .thumbnail span{
+        font-size: 24px;
+        margin: 0px 27px 0px 22px;
+    }
+
+    .thumbnail i {
+        font-size: 37px;
+        margin: 0px 0px 0px 16px;
+    }
+
+    .thumbnail svg {
+        font-size: 44px;
+        margin: 0px 0px 0px 11px;
+        color: #0000006e;
+    }
+  }
+
+
+  @media (min-width: 1441px) and (max-width: 1796px) {
+    .thumbnail{
+           width: 285px;
+           float: left;
+           padding: 4px;
+           margin: 49px 0px 49px 37px;
+           box-shadow: 0px 14px 39px 0px #0000004f;
+           font-size: 18px;
+           font-weight: bold;
+           font-variant: petite-caps;
+       }
+
+       .thumbnail span{
+        font-size: 38px;
+        margin: 0px 27px 0px 19px;
+    }
+
+    .thumbnail i {
+        font-size: 45px;
+        margin: 0px 0px 0px 31px;
+    }
+
+    .thumbnail svg {
+        font-size: 50px;
+    margin: 0px 0px 0px 31px;
+    color: #0000006e;
+    }
+  }

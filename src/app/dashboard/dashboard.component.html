@@ -1,0 +1,52 @@
+<div class="row">
+  <nav class="navbar-inverse">
+      <div class="container-fluid" id="headermargin">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#"><img src="./assets/images/appliedlogo.jpg" alt="no image"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <!-- <ul class="nav navbar-nav" id="homestyle">
+            <li class="active"><a href="#">Home</a></li>
+          </ul> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="loginbuttonstyle" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a id="loginbuttonstyle" (click)="login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="col-md-12">
+  <div class="col-md-2" style="width:12%">
+    <ul class="dashLeft">
+      <a routerLink="bayhome" routerLinkActive="activelinking"><li><i class="material-icons" style="font-size: 17px;
+        margin: 0px 10px 0px 0px;">&#xe871;</i>Dashboard</li></a>
+      
+      <a routerLink="toolcategory" routerLinkActive="activelinking"><li><i class="fa fa-wrench"></i>Tool Category</li></a>
+      <a routerLink="categorytable" routerLinkActive="activelinking"><li><span class="glyphicon glyphicon-list-alt"></span>Category table</li></a>
+      <a routerLink="dashboardhome" routerLinkActive="activelinking"><li><i class="fa">&#xf1b2;</i>Consoles</li></a>
+      <a routerLink="consoles" routerLinkActive="activelinking"><li><i class="fa fa-flask"></i>Manage Console</li></a>
+      <a routerLink="tools" routerLinkActive="activelinking"><li><span class="glyphicon glyphicon-cog"></span>Manage Tools</li></a>
+      <a routerLink="projects" routerLinkActive="activelinking"><li><span class="glyphicon glyphicon-file"></span>Manage Projects</li></a>
+      <a routerLink="users" routerLinkActive="activelinking"><li><span class="glyphicon glyphicon-user"></span>Manage Users</li></a>
+      <a routerLink="reporttable" routerLinkActive="activelinking"><li><span class="glyphicon glyphicon-cloud"></span>Report</li></a>
+
+      <a routerLink="labtrend" routerLinkActive="activelinking"><li><span class="glyphicon glyphicon-stats"></span>Lab Trends</li></a>
+
+      <!-- <a routerLink="movetools"><li><span class="glyphicon glyphicon-hand-right"></span>Move Tools</li></a> -->
+    </ul>
+  </div>
+  <div class="col-md-10" style="width:88%">
+      <router-outlet></router-outlet>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+{
+    "id": 55,
+    "name": "Hot air oven",
+    "status": "PR",
+    "status_value": "Productive",
+    "bay": {
+        "is_active": true,
+        "name": "Console 4",
+        "id": 245
+    },
+    "image": "http://152.135.122.61:8871/media/Bay-20_Hot_air_oven_vGZqDfh.png",
+    "image_url": "http://152.135.122.61:8871/media/Bay-20_Hot_air_oven_vGZqDfh.png",
+    "tool_owner": {
+        "first_name": "SARAVANAN",
+        "id": 4,
+        "email": "Saravanan_Chandrabalu@amat.com"
+    },
+    "is_active": false,
+    "bay_number": "20",
+    "current_project": {
+        "first_name": "Duplicating Field Issue For MFIO Controller Board",
+        "id": 11
+    }
+}

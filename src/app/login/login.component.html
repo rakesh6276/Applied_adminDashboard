@@ -1,0 +1,50 @@
+<div class="col-md-12 loginlogo">
+  <a href="#">
+      <img src="assets/images/applied.png" alt="no image found"/> 
+  </a>
+</div>
+<div class="col-md-12 col-md-offset-6 loginBox">
+
+    <!-- <img src="./images/applied.png" class="user"> -->
+    <form #bayForm="ngForm" (ngSubmit)="submit(login)">
+      <!-- <p>Email</p> -->
+      <div class="form-group"
+      [ngClass]="{
+       'has-error': email.invalid && (email.dirty || email.touched),
+       'has-success': email.valid && (email.dirty || email.touched)
+  }">
+      <input type="text" [(ngModel)]="login.email" class="form-control"
+       name="email" placeholder="Enter Email" required
+        pattern="[^ @]*@[^ @]*" #email="ngModel">
+        <div *ngIf="email.errors && (email.dirty || email.touched)">
+          <p *ngIf="email.errors.required" style="color:#5f0b0bed">Email is required</p>
+          <p *ngIf="email.errors.pattern" style="color:#5f0b0bed">Email must contain at least the @ character</p>
+        </div>
+        
+      </div>  
+      <!-- <p>Password</p> -->
+      <div class="form-group">
+      <input type="Password"  class="form-control" 
+      [(ngModel)]="login.password"
+       name="password" placeholder="Enter Password" required>
+       </div>
+      <button type="submit" class="btn myButton2" [disabled]="bayForm.invalid">Login</button>
+    </form>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   {{messageresponse}}
+  </div>
+</ng-template>
+
+
+
+
+

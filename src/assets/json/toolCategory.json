@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "category_name": "Process",
+        "percentage": 20
+    },
+    {
+        "id": 2,
+        "category_name": "Qualifications",
+        "percentage": 40
+    },
+    {
+        "id": 3,
+        "category_name": "Field Issues",
+        "percentage": 30
+    }
+]

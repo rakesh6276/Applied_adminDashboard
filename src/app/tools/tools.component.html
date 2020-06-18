@@ -1,0 +1,869 @@
+<div>
+    <div  class="row">        
+        <h3 class="headingStyle col-md-10"><i class="fa fa-table"></i> Tool Listing</h3>
+        <div id="dashButtons" style="margin-top:20px;">
+                <button class="btn myButton" (click)="lgModal.show()"><span class="glyphicon glyphicon-plus"></span>Add Tools</button>
+                <!-- <button class="btn myButton2" disabled ="true" (click)="lgModal2.show()"><span class="glyphicon glyphicon-hand-right"></span> Move Bay</button> -->
+                </div>
+    </div>
+    <div class="row">
+        <input type="text" class=" col-md-2 mySearch searchfont" name="search" placeholder="Search.."  [(ngModel)]="term">
+    </div>
+
+     <hr>
+    
+     <!-- <div style="margin: 25px 0px 0px 0px;">
+          <ng2-smart-table [settings]="settings" [source]="movebay" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>
+          </div>  -->
+          
+    
+    <div>
+    
+    </div>
+        <div class="table-responsive" id="responsiveFont" style="margin: 25px 0px 0px 0px;">
+          <table class="table table-striped table-bordered table-hover">
+            <thead class="theadstyle">
+              <tr>
+                <th>ID</th>
+                <th>Consoles</th>
+                <th>Tool Name</th>
+                <th>Status</th>
+                <th>Bay Number</th>
+                <th>Users</th>
+                <th>Project</th>
+                <th>Is Active</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="tbodystyle text-center">
+              <tr *ngFor="let baytools of movebay | filter:term | paginate: {itemsPerPage: pageSize,
+                currentPage: p,totalItems: total};">
+                
+                <td>{{ baytools.id }}</td>
+                <!-- <td *ngIf="baytools.id === EditRowId"><input type="text" [(ngModel)]="baytools.id" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;"></td> -->
+                
+                <td *ngIf="baytools.id !== EditRowId">{{ baytools.bay.name }}</td>
+                <td *ngIf="baytools.id === EditRowId">
+                    <div>
+                        <select [(ngModel)]="baytools.bay.name" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;">
+                          <!-- <option selected="selected">
+                            {{baytools.bay.name}}</option> -->
+                            <option *ngFor="let console of allconsoles" [ngValue]="console.id">
+                                 {{ console.name }}
+                            </option>
+                      </select> 
+                      
+                      
+                    </div>
+                </td>
+    
+                <td *ngIf="baytools.id !== EditRowId">{{ baytools.name }}</td>
+                <td *ngIf="baytools.id === EditRowId">
+                    {{ baytools.name }}
+                  <!-- <input type="text" [(ngModel)]="baytools.name" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;"></td> -->
+                  <!-- <div>
+                      <select [(ngModel)]="baytools.name" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;">
+                          <option *ngFor="let baytools of movebay" [ngValue]="baytools.name">
+                               {{ baytools.name }}
+                          </option>
+                    </select> 
+                    
+                    
+                  </div> -->
+    
+    
+                <td *ngIf="baytools.id !== EditRowId">{{baytools.status}}</td>
+               
+                <td *ngIf="baytools.id === EditRowId">
+                    {{baytools.status}}
+                  <!-- <input type="text" [(ngModel)]="baytools.status" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;"></td> -->
+                  
+                  <!-- <div>
+                      <select [(ngModel)]="baytools.status" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;">
+                          <option [ngValue]="baytools.status">IN</option>
+                          <option [ngValue]="baytools.status">ID</option>
+                          <option [ngValue]="baytools.status">PR</option>
+                          <option [ngValue]="baytools.status">MA</option>
+                          
+                    </select> 
+                  </div> -->
+    
+                <td *ngIf="baytools.id !== EditRowId">{{ baytools.bay_number }}</td>
+                <td *ngIf="baytools.id === EditRowId">
+                  <!-- <input type="text" [(ngModel)]="baytools.bay_number" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;"></td> -->
+                  <div>
+                      <select [(ngModel)]="baytools.bay_number" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;">
+                          <option *ngFor="let baytools of movebay" [ngValue]="baytools.bay_number">
+                               {{ baytools.bay_number }}
+                          </option>
+                    </select> 
+                  </div>
+                  </td>
+                  <td><span class="btn"  (click)="assignuserstool(toolusers,baytools)"><i class="glyphicon glyphicon-user"></i> Users</span></td>
+                  <td><span class="btn"  (click)="assignprojecttool(toolprojects,baytools)"><i class="glyphicon glyphicon-file"></i> Projects</span></td>
+                <td *ngIf="baytools.id !== EditRowId">{{ baytools.is_active }}</td>
+                <td *ngIf="baytools.id === EditRowId">
+                    <!-- <input type="text" [(ngModel)]="baytools.is_active" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;"></td> -->
+                    <div>
+                        <select [(ngModel)]="baytools.is_active" class="form-control" style="margin: 11px;width: 160px;font-size: 17px;display: initial;">
+                            <!-- <option selected="selected">
+                                {{baytools.is_active}}</option> -->
+                          <option>True</option>
+                            <option>False</option>
+                            
+                      </select> 
+                    </div>
+                    </td>
+      
+                <td>
+                        <button type="submit" class="btn btn-primary" *ngIf="baytools.id === EditRowId"  (click)="UpdateBays(baytools,template)" style="margin-top: 11px;">
+                          save
+                        </button>
+                        <button type="button" class="btn btn-default" *ngIf="baytools.id === EditRowId"  (click)="CancelBayUpdate()" style="margin-top: 11px;">
+                          cancel
+                        </button>
+      
+                  <div class="buttons">
+                      <button type="button" class="btn myButtonRed" (click)="EditMove(baytools.id)" *ngIf="baytools.id !== EditRowId">Move</button>
+                      
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="col-xs-12 col-12" style="    text-align: center;
+        margin: 29px 0px 0px 0px;
+        font-size: 18px;">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+    
+    
+     
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       {{messageresponse}}
+      </div>
+    </ng-template>
+      </div>
+
+
+      <!-- model popup -->
+      <!-- <script type="text/ng-template" id="addBays.html">
+        <div class="modal-header toolsModal">Add Bays</div>
+         <div class="modal-body" id="customModalbody">
+            <p>Tool Name<span style="color: red;">*</span></p>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-wrench" style="font-size: 13px;color: black;"></i></span>
+                <input type="text" class="form-control" name="toolname" ng-model="newtool.name" placeholder="Enter tool name" required>
+            </div>
+            <p>Bay Number <span style="color: red;">*</span></p>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons" style="font-size: 17px;color: black;">create</i></span>
+                <input type="text" capitalize class="form-control" name="baynumber" ng-model="newtool.bay_number" placeholder="Enter bay number" required> 
+            </div>
+             <div id="selectMargin">
+             Select Bay
+            <select class="form-control" ng-options="item.id as item.name for item in allconsoles" ng-model="newtool.bay" 
+              required style="margin-left: 94px;width: 160px;font-size: 12px;display: initial;">
+            </select>
+            </div>
+            <div id="selectMargin">
+             Select Owners
+            <select class="form-control" ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_owner" 
+              required style="margin-left: 69px;width: 160px;font-size: 12px;display: initial;">
+            </select>
+            </div>
+            <div id="selectMargin">
+                 Select Users
+                <select class="form-control" name="selectusers" multiple ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_users" 
+                 style="margin-left: 82px;width: 160px;font-size: 12px;display: initial;">
+                </select>
+           </div>
+   
+   
+                <div id="selectMargin">
+                 Select tool category
+                <select class="form-control" name="selectoolcat" ng-options="item.id as item.category_name for item in toolcat" ng-model="newtool.tool_category" 
+                  style="margin-left: 33px;width: 160px;font-size: 12px;display: initial;">
+                </select>
+                </div>	
+                
+   
+           
+            <p>Tool Status</p>
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-exclamation-sign" style="font-size: 13px;color: black;"></span></span>
+                <input type="text" class="form-control" name="toolstatus" ng-model="newtool.status" placeholder="Idle" disabled="">
+            </div>
+           
+           <div id="selectMargin">
+             Is_Active
+            <input type="checkbox" ng-model="newtool.is_active" ng-value={{isact}} style="margin-left: 33px;width: 160px;font-size: 12px;">
+            </div> -->
+   
+   
+   
+   
+       <!-- <form name="userForm" enctype="multipart/form-data">
+    
+            <p>Tool Name<span style="color: red;">*</span></p>
+            <div class="form-group" ng-class="{ 'has-error' : userForm.toolname.$invalid && (userForm.toolname.$dirty || submitted)}">
+                <span class="input-group-addon"><i class="fa fa-wrench" style="font-size: 13px;color: black;"></i></span>
+                <input type="text" name="toolname" class="form-control" ng-model="newtool.name" placeholder="Enter tool name" ng-required="true">
+                <p ng-show="userForm.toolname.$error.required && (userForm.toolname.$dirty || submitted)" class="help-block">tool name is required.</p>
+            </div>
+   
+   
+            <p>Bay Number <span style="color: red;">*</span></p>
+            <div class="form-group" ng-class="{ 'has-error' : userForm.baynumber.$invalid && (userForm.baynumber.$dirty || submitted)}">
+                <span class="input-group-addon"><i class="material-icons" style="font-size: 17px;color: black;">create</i></span>
+                <input type="text" name="baynumber" capitalize class="form-control" ng-model="newtool.bay_number" placeholder="Enter bay number" ng-required="true">
+                <p ng-show="userForm.baynumber.$error.required && (userForm.baynumber.$dirty || submitted)" class="help-block">tool name is required.</p> 
+            </div>
+             
+             <div class="form-group" ng-class="{ 'has-error' : userForm.selectbay.$invalid && (userForm.selectbay.$dirty || submitted)}">
+                <div id="selectMargin">
+                 Select Bay
+                <select name="selectbay" class="form-control" ng-options="item.id as item.name for item in allconsoles" ng-model="newtool.bay" 
+                  ng-required="true" style="margin-left: 58px;width: 160px;font-size: 12px;">
+                </select>
+                </div>
+                 <p ng-show="userForm.selectbay.$error.required && (userForm.selectbay.$dirty || submitted)" class="help-block">Select Bay</p>
+            </div>
+   
+             <div class="form-group" ng-class="{ 'has-error' : userForm.selectowners.$invalid && (userForm.selectowners.$dirty || submitted)}">
+                <div id="selectMargin">
+                 Select Owners
+                <select name="selectowners" class="form-control" ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_owner" 
+                  ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+                </select>
+                </div>	
+                <p ng-show="userForm.selectowners.$error.required && (userForm.selectowners.$dirty || submitted)" class="help-block">Select Owners</p> 
+            </div>
+   
+            <div class="form-group" ng-class="{ 'has-error' : userForm.selectusers.$invalid && (userForm.selectusers.$dirty || submitted)}">
+                <div id="selectMargin">
+                 Select Users
+                <select name="selectusers" multiple class="form-control" ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_users" 
+                  ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+                </select>
+                </div>	
+                <p ng-show="userForm.selectusers.$error.required && (userForm.selectusers.$dirty || submitted)" class="help-block">Select users</p> 
+            </div>
+   
+   
+            <div class="form-group" ng-class="{ 'has-error' : userForm.selectoolcat.$invalid && (userForm.selectoolcat.$dirty || submitted)}">
+                <div id="selectMargin">
+                 Select tool category
+                <select name="selectoolcat" class="form-control" ng-options="item.id as item.category_name for item in toolcat" ng-model="newtool.tool_category" 
+                  ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+                </select>
+                </div>	
+                <p ng-show="userForm.selectoolcat.$error.required && (userForm.selectoolcat.$dirty || submitted)" class="help-block">Select tool category</p> 
+            </div>
+   
+   
+            <p>Tool Status</p>
+            <div class="form-group" ng-class="{ 'has-error' : userForm.toolstatus.$invalid && (userForm.toolstatus.$dirty || submitted)}">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-exclamation-sign" style="font-size: 13px;color: black;"></span></span>
+                <input type="text" class="form-control" name="toolstatus" ng-model="newtool.status" placeholder="Idle" disabled="">
+            </div>
+   
+   
+            <p>Upload Tool Image</p>
+             <div class="form-group" ng-class="{ 'has-error' : userForm.toolimage.$invalid && (userForm.toolimage.$dirty || submitted)}">
+            <input type="file" id="image" class="form-control" name="image" ng-model="newtool.image">
+            <p ng-show="userForm.toolimage.$error.required && (userForm.toolimage.$dirty || submitted)" class="help-block">tool image is required.</p>
+           </div>
+   
+   
+           <div id="selectMargin" class="form-group" ng-class="{ 'has-error' : userForm.isactive.$invalid && (userForm.isactive.$dirty || submitted)}">
+             Is_Active
+            <input type="checkbox" name="isactive" ng-model="newtool.is_active" ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+            <p ng-show="userForm.isactive.$error.required && (userForm.isactive.$dirty || submitted)" class="help-block">tool image is required.</p>
+            </div>
+           </form> -->
+   
+           
+         <!-- <div class="modal-footer" style="text-align: center;">
+           <button type="submit" class="btn btn-success" ng-click="savenewTools(newtool)" style="margin-right: 15px;">Submit</button>
+   
+           <button class="btn btn-danger" ng-click="close()">Cancel</button>
+         </div>
+         
+   <!-- </form> -->
+   <!-- </div>
+   </script> -->
+   
+   <script type="text/ng-template" id="addmove.html">
+        <div class="modal-header toolsModal" style="width: 298px;
+        font-family: Merriweather;
+        background: darkslategray;">Message</div>
+         <div class="modal-body" id="customModalbody">
+           <p style="text-align: center;font-family: Merriweather;color: #000000bd;
+               padding: 14px 0px 3px 0px;">{{BayResponse}}</p>
+           
+           <!-- <input type="text" name="baynumber" placeholder="Enter bay number" />
+           <h3>Tool Name <span style="color: red;">*</span></h3>
+           <input type="text" name="baynumber" placeholder="Enter tool name" /> -->
+         </div>
+         <div class="modal-footer" style="text-align: center;">
+           <button class="btn myButtonRed" ng-click="close()">OK</button>
+         </div>
+   </script>
+   
+   
+   <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+               <div class="modal-header mymodal-header">
+                 <h3 class="modal-title">Add Tools <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button></h3>
+                 
+               </div>
+
+           <div class="modal-body">
+                   <!-- <p style="margin-top: 10px;
+                   font-weight: bold;">Tool Name<span 
+                   style="color: red;">*</span>
+                   </p>
+                   <div class="input-group">
+                       <span class="input-group-addon"><i class="fa fa-wrench" style="font-size: 13px;color: black;"></i></span>
+                       <input type="text" class="form-control"
+                        name="toolname" [(ngModel)]="addtools.name" placeholder="Enter tool name" required>
+                   </div>
+                   <p style="margin-top: 10px;
+                   font-weight: bold;">Bay Number <span style="color: red;">*</span></p>
+                   <div class="input-group">
+                       <span class="input-group-addon"><i class="material-icons" style="font-size: 17px;color: black;">create</i></span>
+                       <input type="text" class="form-control" name="baynumber" [(ngModel)]="addtools.bay_number" placeholder="Enter bay number" required> 
+                   </div>
+                   
+                    <div id="selectMargin">
+                    Select Bay
+                       <select name="state" [(ngModel)]="addtools.bay" class="form-control" style="margin-left: 136px;width: 160px;font-size: 12px;display: initial;">
+                           <option value="" disabled>Choose a Bay</option>
+                           <option *ngFor="let state of _postsArray" [ngValue]="state.id">
+                           {{ state.name}}
+                           </option>
+                       </select>
+                   </div>
+   
+                   <div id="selectMargin">
+                           Select Owners
+                              <select name="owners" [(ngModel)]="addtools.tool_owner" class="form-control" style="margin-left: 111px;width: 218px;font-size: 12px;display: initial;">
+                                  <option value="" disabled>Choose Owner</option>
+                                  <option *ngFor="let owner of toolownerobj" [ngValue]="owner.id">
+                                  {{owner.email}}
+                                  </option>
+                              </select>
+                   </div>
+   
+                   <div id="selectMargin">
+                       Select Users
+                          <select name="users" [(ngModel)]="addtools.tool_users" multiple class="form-control" style="margin-left: 123px;width: 279px;font-size: 12px;display: initial;">
+                              <option value="" disabled>Choose User</option>
+                              <option *ngFor="let owner of toolownerobj" [ngValue]="owner.id">
+                              {{owner.email}}
+                              </option>
+                          </select>
+                   </div>
+   
+                   <div id="selectMargin">
+                       Select Tool Category
+                          <select name="category" [(ngModel)]="addtools.tool_category" class="form-control" style="margin-left: 69px;width: 160px;font-size: 12px;display: initial;">
+                              <option value="" disabled>Choose Tool Category</option>
+                              <option *ngFor="let cat of _toolCategory" [ngValue]="cat.id">
+                              {{cat.category_name}}
+                              </option>
+                          </select>
+                   </div>
+   
+                   <p>Tool Status</p>
+                   <div class="input-group">
+                       <span class="input-group-addon"><span class="glyphicon glyphicon-exclamation-sign" style="font-size: 13px;color: black;"></span></span>
+                       <input type="text" class="form-control" name="toolstatus" [(ngModel)]="addtools.status" placeholder="Enter tool status" placeholder="Idle" disabled="">
+                   </div>
+   
+                   <div id="selectMargin">
+                       Is_Active
+                      <input type="checkbox" [(ngModel)]="addtools.is_active" style="margin-left: 80px;width: 160px;font-size: 12px;">
+                  </div> -->
+
+
+
+
+
+
+
+                  <form #toolsForm="ngForm" (ngSubmit)="saveNewTools(addtools)">
+
+                        <div class="form-group" 
+                             [ngClass]="{
+                            'has-error': name.invalid && (name.dirty || name.touched),
+                            'has-success': name.valid && (name.dirty || name.touched)
+                                        }">
+                    
+                                        <p style="margin-top: 10px;
+                                        font-weight: bold;">Tool Name<span 
+                                        style="color: red;">*</span>
+                                        </p>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-wrench" 
+                                                style="font-size: 13px;color: black;">
+                                            </i>
+                                            </span>
+                                            <input type="text" class="form-control"
+                                             name="toolname" 
+                                             [(ngModel)]="addtools.name" 
+                                             (ngModelChange)="titleCaseWord(addtools.name)" 
+                                             placeholder="Enter tool name" 
+                                             required #name="ngModel">
+                                        </div>
+                                        <div *ngIf="name.errors && (name.dirty || name.touched)">
+                                            <p *ngIf="name.errors.required" style="color:#5f0b0bed">Tool Name is required</p>
+                                        </div>                        
+                    
+                        </div>
+
+                        <div class="form-group" 
+                             [ngClass]="{
+                            'has-error': bay_number.invalid && (bay_number.dirty || bay_number.touched),
+                            'has-success': bay_number.valid && (bay_number.dirty || bay_number.touched)
+                                        }">
+                    
+                                        <p style="margin-top: 10px;
+                                            font-weight: bold;">Bay Number <span style="color: red;">*</span></p>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="material-icons" 
+                                                style="font-size: 17px;color: black;">create</i>
+                                            </span>
+                                            <input type="text" class="form-control" 
+                                            name="baynumber" 
+                                            [(ngModel)]="addtools.bay_number" 
+                                            placeholder="Enter bay number" 
+                                            pattern="^[0-9]{1,4}$"  
+                                            required #bay_number="ngModel"> 
+                                        </div>
+                                        <div *ngIf="bay_number.errors && (bay_number.dirty || bay_number.touched)">
+                                            <p *ngIf="bay_number.errors.required" 
+                                            style="color:#5f0b0bed">Bay Number is required</p>
+                                            <p *ngIf="bay_number.errors.pattern" style="color:#5f0b0bed">
+                                                Only valid numbers of maxlength 5 are allowed</p>
+                                        </div>                        
+                    
+                        </div>
+                        <div class="form-group" 
+                        [ngClass]="{
+                            'has-error': bay.invalid && (bay.dirty || bay.touched),
+                            'has-success': bay.valid && (bay.dirty || bay.touched)
+                                        }">
+
+                                        <div id="selectMargin">
+                                                Select Consoles
+                                                   <select name="bay" 
+                                                   [(ngModel)]="addtools.bay" 
+                                                   class="form-control" 
+                                                   required #bay="ngModel" 
+                                                   style="margin-left: 136px;width: 160px;font-size: 12px;display: initial;">
+                                                       <option value="" disabled>Choose a Bay</option>
+                                                       <option *ngFor="let state of _postsArray" [ngValue]="state.id">
+                                                       {{ state.name}}
+                                                       </option>
+                                                   </select>
+                                                   <div *ngIf="bay.errors && (bay.dirty || bay.touched)">
+                                                        <p *ngIf="bay.errors.required" 
+                                                        style="color:#5f0b0bed">Console is required
+                                                    </p>
+                                                   </div>
+                                        </div>
+
+                        </div>
+                        <div class="form-group" 
+                        [ngClass]="{
+                            'has-error':tool_owner.invalid && (tool_owner.dirty || tool_owner.touched),
+                            'has-success':tool_owner.valid && (tool_owner.dirty || tool_owner.touched)
+                        }">
+                        <div id="selectMargin">
+                                Select Owners
+                                   <select name="owners" 
+                                   [(ngModel)]="addtools.tool_owner" 
+                                   class="form-control" 
+                                   required #tool_owner="ngModel" 
+                                   style="margin-left: 111px;
+                                   width: 218px;
+                                   font-size: 12px;
+                                   display: initial;">
+                                       <option value="" disabled>
+                                           Choose Owner</option>
+                                       <option 
+                                       *ngFor="let owner of toolownerobj" 
+                                       [ngValue]="owner.id">
+                                       {{owner.email}}
+                                       </option>
+                                   </select>
+                                   <div *ngIf="tool_owner.errors && (tool_owner.dirty || tool_owner.touched)">
+                                        <p *ngIf="tool_owner.errors.required" 
+                                        style="color:#5f0b0bed">Tool Owner is required></p>
+                                   </div>
+                        </div>
+        
+                     
+
+                        </div>
+                        <div class="form-group" 
+                        [ngClass]="{
+                            'has-error':tool_users.invalid && (tool_users.dirty || tool_users.touched),
+                            'has-success':tool_users.valid && (tool_users.dirty || tool_users.touched)
+                        }">
+                            <div id="selectMargin">
+                                Select Users
+                                
+                                <select name="users" 
+                              
+                                [(ngModel)]="addtools.tool_users" multiple 
+                                class="form-control" required #tool_users="ngModel" 
+                                style="margin-left: 123px;width: 279px;font-size: 12px;display: initial;">
+                                    <option value="" disabled>Choose User</option>
+                                    <option *ngFor="let owner of toolownerobj" [ngValue]="owner.id">
+                                    {{owner.email}}
+                                    </option>
+                                </select>
+                                <div *ngIf="tool_users.errors && (tool_users.dirty||tool_users.touched)">
+                                        <p *ngIf="tool_users.errors.required" 
+                                        style="color:#5f0b0bed">Tool Users are required</p>        
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div id="selectMargin">
+                            Select Tool Category
+                               <select name="category" 
+                               [(ngModel)]="addtools.tool_category" 
+                               class="form-control"
+                               style="margin-left: 69px;width: 160px;font-size: 12px;display: initial;">
+                                   <option value="" disabled>Choose Tool Category</option>
+                                   <option *ngFor="let cat of _toolCategory" [ngValue]="cat.id">
+                                   {{cat.category_name}}
+                                   </option>
+                               </select>
+                        </div>
+
+                        
+                        
+                        <p>Tool Status</p>
+                   <div class="input-group">
+                       <span class="input-group-addon">
+            <span class="glyphicon glyphicon-exclamation-sign" 
+            style="font-size: 13px;color: black;"></span>
+                        </span>
+                       <input type="text" 
+                       name="toolstatus"
+                       class="form-control" 
+                       [(ngModel)]="addtools.status" 
+                       placeholder="Idle" disabled=""
+                       >
+                   </div>
+
+
+                
+                   <div id="selectMargin">
+                       Is_Active
+                      <input type="checkbox" name="isactive"
+                      [(ngModel)]="addtools.is_active" 
+                      
+                      style="margin-left: 80px;width: 160px;font-size: 12px;">
+                  </div>
+                  
+                        
+                        <div class="modal-footer" 
+                        style="text-align: center;">
+                                <button type="submit" 
+                                class="btn btn-success" 
+                                (click)="lgModal.hide();" 
+                                style="margin-right: 15px;color:black;font-family: Bree serif;
+                                font-size: 16px;" 
+                                [disabled]="toolsForm.invalid">Submit</button>
+                                <button class="btn btn-danger" style="    font-family: Bree serif;
+                                font-size: 16px;"
+                                (click)="lgModal.hide();$event.preventDefault();">Cancel</button>    
+                                
+                              </div>
+                    </form>                   
+                    
+                <!-- <div class="modal-footer" style="text-align: center;">
+                  <button type="submit" class="btn btn-success" (click)="saveNewTools(addtools);lgModal.hide();" style="margin-right: 15px;">Submit</button>
+          
+                  <button class="btn btn-danger" (click)="lgModal.hide()">Cancel</button>
+                </div> -->
+           </div>
+           </div>
+           </div>
+           </div>
+           
+   
+           <div bsModal #lgModal2="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+               <div class="modal-dialog modal-lg">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                         <h4 class="modal-title pull-left">Move Tools</h4>
+                         <button type="button" class="close pull-right" (click)="lgModal2.hide()" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                         </button>
+                       </div>
+                   <div class="modal-body">
+                           
+                            <span id="selectMargin">
+                            Select Tool
+                               <select name="state" [(ngModel)]="swaptools.too1" class="form-control" style="margin-left: 36px;margin-right:33px;width: 280px;font-size: 12px;display: initial;">
+                                   <option value="" disabled>Choose a Tool</option>
+                                   <option *ngFor="let tool1 of toolList" [ngValue]="tool1">
+                                   Bay {{ tool1.bay_number}}-{{tool1.name}}
+                                   </option>
+                               </select>
+                           </span>
+           
+                           <span id="selectMargin">
+                               Select Tool
+                                      <select name="owners" [(ngModel)]="swaptools.too2" class="form-control" style="margin-left: 36px;width: 280px;font-size: 12px;display: initial;">
+                                          <option value="" disabled>Choose a Tool</option>
+                                          <option *ngFor="let tool2 of toolList" [ngValue]="tool2">
+                                          Bay {{tool2.bay_number}}-{{tool2.name}}
+                                          </option>
+                                      </select>
+                           </span>
+           
+                           
+                   </div>
+                   <div class="modal-footer" style="text-align: center;">
+                       <button type="submit" class="btn btn-success" (click)="swapTools(swaptools);lgModal2.hide();" style="margin-right: 15px;">Swap</button>
+               
+                       <button class="btn btn-danger" (click)="lgModal2.hide()">Cancel</button>
+                     </div>
+                   </div>
+               </div>
+           </div>
+   
+           <ng-template #template>
+               <div class="modal-header">
+                 <h4 class="modal-title pull-left">Modal</h4>
+                 <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                {{messageresponse}}
+               </div>
+             </ng-template>
+
+             <ng-template #toolusers>
+                <div class="modal-header mymodal-header">
+                          <h3 class="modal-title">Assign Users<button type="button" class="close pull-right" 
+                            aria-label="Close" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                            </button></h3>
+                        
+                         </div>
+                <div class="modal-body">
+                    <div class="portlet box cblue">
+                            <div class="portlet-title">
+                                <div class="caption mycaption">
+                                    <i class="fa fa-users"></i> <b>Users</b>
+                                    <br> <span class="upercase">{{tools.name}}</span>
+                                </div>
+                            </div>
+                    </div>
+                 <div class="portlet-body icon-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <!-- <div class="portlet light bordered"> -->
+                                <!-- <div class="portlet-title"> -->
+                                    <div class="caption">
+                                        <span class="caption-subject bold font-blue-hoki uppercase"><p style="font-family: Bree serif;font-size: 18px;"> Assigned Users</p>  </span>
+                                    </div>
+                                <!-- </div> -->
+                                <!-- <div class="portlet-body"> -->
+                                    <div class="scroller"  data-always-visible="1" data-rail-visible="1">
+                                        <!-- <ul class="feeds"> -->
+                                            <li *ngFor="let toolusersdetails of assignedtoolsusers" style="list-style: none;"> 
+                                                         <div class="cont-col1 ">
+                                                            <!-- <div class="col-md-4" > -->
+                                                            
+                                                        <!-- </div> -->
+                                                        <!-- <div class="cont-col2"> -->
+                                                        <!-- <div class="col-md-12 icon-margin"> -->
+                                                                <!-- <div class="label label-sm label-info">
+                                                                        <i class="fa fa-user"></i>
+                                                                        
+                                                                    </div> -->
+                                                                    
+                                                                    <input type="checkbox" id="checkbox2" > &nbsp;
+                                                           {{toolusersdetails.first_name}} &nbsp;{{toolusersdetails.last_name}}
+                                                           
+                                                        </div>
+                                            </li>
+                                        <!-- </ul> -->
+                                    </div>
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <span class="caption-subject bold font-blue-hoki uppercase"><p style="font-family: Bree serif; font-size: 18px;">Assign Users</p>  </span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="row" style="width: 105%;">
+                                        <form class="example">
+                                            <input type="text" class=" col-md-2 mySearch searchfont1" placeholder="Search.." (input)="filterValue($event)">
+                                            
+                                            <button type="submit" (click)="filterValue($event)" ><i class="fa fa-search"></i></button>
+                                            <!-- <button type="reset" value="reset"></button> -->
+                                            </form>
+                                            <!-- <ng-container *ngFor="let userstool of selectuserstool | filter : userstool">
+                                                    <button *ngIf="userstool!=users">
+                                                        {{userstool}}
+                                                    </button>
+                                                    </ng-container> -->
+                                            
+                                            <!-- <div class="row">
+                                                    <input type="text" class=" col-md-2 mySearch searchfont" name="search" placeholder="Search.."  [(ngModel)]="term">
+                                                </div> -->
+                                        <!-- <mat-select placeholder="Select your Users" [(ngModel)]="selectedValue" [formControl]="toppings" multiple  (focusout)="onOut()">
+                                            <option *ngFor="let users of selectusers" [ngValue]="users.first_name">
+                                                <mat-option *ngFor="let users of selectusers" [ngValue]="users.first_name"> {{users.first_name}}{{users.last_name}}</mat-option>
+                                          </mat-select> -->
+                                         
+                                        <select name="usertool" class="form-control myselect-style" 
+                                         multiple (change)="userstool($event)" >
+                                            <option value="usertool" disabled>Choose Users</option>
+                                            <option *ngFor="let usertool of  test | filter : usertool " value="{{usertool.id}}">
+                                            {{usertool.first_name}}&nbsp;{{usertool.last_name}}
+                                           
+                                            </option>
+                                            
+                                        </select>
+
+                                    </div>
+                                    <!-- <div class="form-actions noborder">
+                                        <button type="button" (click)="toolassignusers(usertool,tools.id);modalRef.hide()" class="btn assign">Assign</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 bottom-button">
+                            <button class="btn myButton" (click)="toolassignusers(toolsusers,tools.id);modalRef.hide()">Assign</button>
+                        </div>
+                    </div>
+            
+                </div>
+                        </div>
+            </ng-template>
+            <ng-template #toolprojects>
+                <div class="modal-header mymodal-header">
+                          <h3 class="modal-title">Assign Projects<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                            </button></h3>
+                        
+                         </div>
+                <div class="modal-body">
+                    <div class="portlet box cblue">
+                            <div class="portlet-title">
+                                <div class="caption mycaption">
+                                    <i class="fa fa-users"></i> <b>Users</b>
+                                    <br> <span class="upercase">{{tools.name}}</span>
+                                </div>
+                            </div>
+                    </div>
+                 <div class="portlet-body icon-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <!-- <div class="portlet light bordered"> -->
+                                <!-- <div class="portlet-title"> -->
+                                    <div class="caption">
+                                        <span class="caption-subject bold font-blue-hoki uppercase"><p style="font-family: Bree serif;font-size: 18px;"> Assigned Projects</p>  </span>
+                                    </div>
+                                <!-- </div> -->
+                                <!-- <div class="portlet-body"> -->
+                                    <div class="scroller"  data-always-visible="1" data-rail-visible="1">
+                                        <!-- <ul class="feeds"> -->
+                                            <li *ngFor="let projectsdetails of toolsprojects" style="list-style: none;">
+                                                        <!-- <div class="cont-col1 "> -->
+                                                            <!-- <div class="col-md-4" > -->
+                                                            
+                                                        <!-- </div> -->
+                                                        <!-- <div class="cont-col2"> -->
+                                                        <div class="col-md-12 icon-margin">
+                                                                <div class="label label-sm label-info">
+                                                                        <i class="fa fa-user"></i>
+                                                                    </div>
+                                                           {{projectsdetails.project_name}}{{projectsdetails.name}}
+                                                        </div>
+                                            </li>
+                                        <!-- </ul> -->
+                                    </div>
+                                <!-- </div> --> 
+                            <!-- </div> -->
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <span class="caption-subject bold font-blue-hoki uppercase"><p style="font-family: Bree serif;font-size: 18px;">Assign Projects</p>  </span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="row" style="width: 105%;">
+                                        <form class="example">
+                                            <input type="text" class=" col-md-2 mySearch searchfont1" placeholder="Search.." (input)="filterValue1($event)">
+                                            
+                                            <button type="submit" (click)="filterValue1($event)"><i class="fa fa-search"></i></button>
+                                            </form>
+                                       
+                                         
+                                        <select name="toolprojectsdetails" class="form-control myselect-style" [(ngModel)]="toolprojectsdetails" 
+                                                     multiple (change)="toolassignprojects($event)">            
+                                            <option value="toolprojectsdetails" disabled>Choose Projects</option>
+                                            <option *ngFor="let toolprojectsdetails of test1 | filter : toolprojectsdetails" [ngValue]="toolprojectsdetails">
+                                            {{toolprojectsdetails.name}}
+                                            </option>
+                                        </select>
+
+                                        <!-- <select name="usertool" class="form-control myselect-style" [(ngModel)]="toolprojectsdetails"  multiple (change)="projectstool(toolprojectsdetails)">
+                                            <option value="" disabled>Choose Projects</option>
+                                            <option *ngFor="let toolprojectsdetails of selectprojects" [ngValue]="toolprojectsdetails">
+                                            {{toolprojectsdetails.name}}
+                                            </option>
+                                        </select> -->
+                                    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 bottom-button">
+                            <button class="btn myButton" (click)="toolassignprojects(toolprojectsdetails,tools.id);modalRef.hide()">Assign</button>
+                        </div>
+                    </div>
+            
+                </div>
+                        </div>
+            </ng-template>
+            
+           
+   

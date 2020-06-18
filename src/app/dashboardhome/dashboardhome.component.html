@@ -1,0 +1,352 @@
+<!-- <h1>{{toolid1}}</h1> -->
+
+<!-- <div id="dashButtons">
+<button class="btn myButton" (click)="lgModal.show()"><span class="glyphicon glyphicon-plus"></span>Add Bay</button>
+<button class="btn myButton2" disabled ="true" (click)="lgModal2.show()"><span class="glyphicon glyphicon-hand-right"></span> Move Bay</button>
+</div> -->
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+
+						<h3><i class="fa fa-flask"></i> Console 1</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div class="top" *ngFor="let bayno of console1" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 2</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console2" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 3</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console3" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 4</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console4" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 5</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console5" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 6</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console6" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 7</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console7" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Null Console</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row nullbays">
+						<div *ngFor="let bayno of nullconsole" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 8</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console8" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		 
+
+<script type="text/ng-template" id="addBays.html">
+	 <div class="modal-header toolsModal">Add Bays</div>
+      <div class="modal-body" id="customModalbody">
+		 <p>Tool Name<span style="color: red;">*</span></p>
+         <div class="input-group">
+		     <span class="input-group-addon"><i class="fa fa-wrench" style="font-size: 13px;color: black;"></i></span>
+		     <input type="text" class="form-control" name="toolname" ng-model="newtool.name" placeholder="Enter tool name" required>
+		 </div>
+		 <p>Bay Number <span style="color: red;">*</span></p>
+         <div class="input-group">
+		     <span class="input-group-addon"><i class="material-icons" style="font-size: 17px;color: black;">create</i></span>
+		     <input type="text" capitalize class="form-control" name="baynumber" ng-model="newtool.bay_number" placeholder="Enter bay number" required> 
+		 </div>
+		  <div id="selectMargin">
+		  Select Bay
+		 <select class="form-control" ng-options="item.id as item.name for item in allconsoles" ng-model="newtool.bay" 
+		   required style="margin-left: 94px;width: 160px;font-size: 12px;display: initial;">
+         </select>
+		 </div>
+		 <div id="selectMargin">
+		  Select Owners
+		 <select class="form-control" ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_owner" 
+		   required style="margin-left: 69px;width: 160px;font-size: 12px;display: initial;">
+         </select>
+		 </div>
+		 <div id="selectMargin">
+			  Select Users
+			 <select class="form-control" name="selectusers" multiple ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_users" 
+			  style="margin-left: 82px;width: 160px;font-size: 12px;display: initial;">
+	         </select>
+		</div>
+
+
+			 <div id="selectMargin">
+			  Select tool category
+			 <select class="form-control" name="selectoolcat" ng-options="item.id as item.category_name for item in toolcat" ng-model="newtool.tool_category" 
+			   style="margin-left: 33px;width: 160px;font-size: 12px;display: initial;">
+	         </select>
+			 </div>	
+			 
+
+		
+		 <p>Tool Status</p>
+         <div class="input-group">
+		     <span class="input-group-addon"><span class="glyphicon glyphicon-exclamation-sign" style="font-size: 13px;color: black;"></span></span>
+		     <input type="text" class="form-control" name="toolstatus" ng-model="newtool.status" placeholder="Idle" disabled="">
+		 </div>
+		
+		<div id="selectMargin">
+		  Is_Active
+		 <input type="checkbox" ng-model="newtool.is_active" ng-value={{isact}} style="margin-left: 33px;width: 160px;font-size: 12px;">
+		 </div>
+
+
+
+
+	<!-- <form name="userForm" enctype="multipart/form-data">
+ 
+		 <p>Tool Name<span style="color: red;">*</span></p>
+         <div class="form-group" ng-class="{ 'has-error' : userForm.toolname.$invalid && (userForm.toolname.$dirty || submitted)}">
+		     <span class="input-group-addon"><i class="fa fa-wrench" style="font-size: 13px;color: black;"></i></span>
+		     <input type="text" name="toolname" class="form-control" ng-model="newtool.name" placeholder="Enter tool name" ng-required="true">
+		     <p ng-show="userForm.toolname.$error.required && (userForm.toolname.$dirty || submitted)" class="help-block">tool name is required.</p>
+		 </div>
+
+
+		 <p>Bay Number <span style="color: red;">*</span></p>
+         <div class="form-group" ng-class="{ 'has-error' : userForm.baynumber.$invalid && (userForm.baynumber.$dirty || submitted)}">
+		     <span class="input-group-addon"><i class="material-icons" style="font-size: 17px;color: black;">create</i></span>
+		     <input type="text" name="baynumber" capitalize class="form-control" ng-model="newtool.bay_number" placeholder="Enter bay number" ng-required="true">
+		     <p ng-show="userForm.baynumber.$error.required && (userForm.baynumber.$dirty || submitted)" class="help-block">tool name is required.</p> 
+		 </div>
+		  
+		  <div class="form-group" ng-class="{ 'has-error' : userForm.selectbay.$invalid && (userForm.selectbay.$dirty || submitted)}">
+			 <div id="selectMargin">
+			  Select Bay
+			 <select name="selectbay" class="form-control" ng-options="item.id as item.name for item in allconsoles" ng-model="newtool.bay" 
+			   ng-required="true" style="margin-left: 58px;width: 160px;font-size: 12px;">
+	         </select>
+			 </div>
+			  <p ng-show="userForm.selectbay.$error.required && (userForm.selectbay.$dirty || submitted)" class="help-block">Select Bay</p>
+		 </div>
+
+		  <div class="form-group" ng-class="{ 'has-error' : userForm.selectowners.$invalid && (userForm.selectowners.$dirty || submitted)}">
+			 <div id="selectMargin">
+			  Select Owners
+			 <select name="selectowners" class="form-control" ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_owner" 
+			   ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+	         </select>
+			 </div>	
+			 <p ng-show="userForm.selectowners.$error.required && (userForm.selectowners.$dirty || submitted)" class="help-block">Select Owners</p> 
+		 </div>
+
+		 <div class="form-group" ng-class="{ 'has-error' : userForm.selectusers.$invalid && (userForm.selectusers.$dirty || submitted)}">
+			 <div id="selectMargin">
+			  Select Users
+			 <select name="selectusers" multiple class="form-control" ng-options="item.id as item.email for item in toolownerobj" ng-model="newtool.tool_users" 
+			   ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+	         </select>
+			 </div>	
+			 <p ng-show="userForm.selectusers.$error.required && (userForm.selectusers.$dirty || submitted)" class="help-block">Select users</p> 
+		 </div>
+
+
+		 <div class="form-group" ng-class="{ 'has-error' : userForm.selectoolcat.$invalid && (userForm.selectoolcat.$dirty || submitted)}">
+			 <div id="selectMargin">
+			  Select tool category
+			 <select name="selectoolcat" class="form-control" ng-options="item.id as item.category_name for item in toolcat" ng-model="newtool.tool_category" 
+			   ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+	         </select>
+			 </div>	
+			 <p ng-show="userForm.selectoolcat.$error.required && (userForm.selectoolcat.$dirty || submitted)" class="help-block">Select tool category</p> 
+		 </div>
+
+
+		 <p>Tool Status</p>
+         <div class="form-group" ng-class="{ 'has-error' : userForm.toolstatus.$invalid && (userForm.toolstatus.$dirty || submitted)}">
+		     <span class="input-group-addon"><span class="glyphicon glyphicon-exclamation-sign" style="font-size: 13px;color: black;"></span></span>
+		     <input type="text" class="form-control" name="toolstatus" ng-model="newtool.status" placeholder="Idle" disabled="">
+		 </div>
+
+
+		 <p>Upload Tool Image</p>
+		  <div class="form-group" ng-class="{ 'has-error' : userForm.toolimage.$invalid && (userForm.toolimage.$dirty || submitted)}">
+		 <input type="file" id="image" class="form-control" name="image" ng-model="newtool.image">
+		 <p ng-show="userForm.toolimage.$error.required && (userForm.toolimage.$dirty || submitted)" class="help-block">tool image is required.</p>
+		</div>
+
+
+		<div id="selectMargin" class="form-group" ng-class="{ 'has-error' : userForm.isactive.$invalid && (userForm.isactive.$dirty || submitted)}">
+		  Is_Active
+		 <input type="checkbox" name="isactive" ng-model="newtool.is_active" ng-required="true" style="margin-left: 33px;width: 160px;font-size: 12px;">
+		 <p ng-show="userForm.isactive.$error.required && (userForm.isactive.$dirty || submitted)" class="help-block">tool image is required.</p>
+		 </div>
+		</form> -->
+
+		
+      <div class="modal-footer" style="text-align: center;">
+        <button type="submit" class="btn btn-success" ng-click="savenewTools(newtool)" style="margin-right: 15px;">Submit</button>
+
+        <button class="btn btn-danger" ng-click="close()">Cancel</button>
+      </div>
+      
+<!-- </form> -->
+</div>
+</script>
+
+<script type="text/ng-template" id="addmove.html">
+	 <div class="modal-header toolsModal" style="width: 298px;
+	 font-family: Merriweather;
+	 background: darkslategray;">Message</div>
+      <div class="modal-body" id="customModalbody">
+        <p style="text-align: center;font-family: Merriweather;color: #000000bd;
+            padding: 14px 0px 3px 0px;">{{BayResponse}}</p>
+		
+        <!-- <input type="text" name="baynumber" placeholder="Enter bay number" />
+        <h3>Tool Name <span style="color: red;">*</span></h3>
+        <input type="text" name="baynumber" placeholder="Enter tool name" /> -->
+      </div>
+      <div class="modal-footer" style="text-align: center;">
+        <button class="btn myButtonRed" ng-click="close()">OK</button>
+      </div>
+</script>
+
+
+
+
+		<ng-template #template>
+			<div class="modal-header">
+			  <h4 class="modal-title pull-left">Modal</h4>
+			  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			 {{messageresponse}}
+			</div>
+		  </ng-template>
+

@@ -1,0 +1,158 @@
+<div>
+    <!-- BEGIN MAIN CONTENT -->
+    <div class="row">
+        <div class="col-md-12 headingsss">
+
+            <!-- Begin: life time stats -->
+            <div class="portlet light portlet-fit bordered">
+
+
+                <div class="portlet-title">
+                    <div class="headingStyle11" style="margin-right: 150px;">
+                        <span class="fa fa-table font-green"></span>
+                        <span>Report Generation</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2"><b>Select Date</b></div>
+                        <!-- <div class="input-group col-lg-4 col-md-4" id="reportgenerate" style="margin-bottom: 20px;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            <input date-range-picker name="daterange5" class="date-picker" type="text"
+                                   ng-model="date" options="opts" style="padding: 3px;" required/>
+                        </div> -->
+                        <div id="reportrange" class="col-md-4">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                            <span></span> <b class="caret"></b>
+                        </div>
+                    </div>
+                    <table class="table table-striped 
+                    table-bordered table-hover order-column fulltable">
+                        <thead>
+                        <tr>
+                            <th class="tableheading" style="width: 50%;">For</th>
+                            <th class="tableheading">Export</th>
+                        </tr>
+                        </thead>
+                        <tbody class="tbody style tbodystyle">
+                        <tr class="odd gradeX">
+                            <td>Lab</td>
+                            <td><a type="button" id="export" class="btn blue-ebonyclay" (click)="callDateApply1(tool)">Export Excel</a></td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        <div class="portlet-body">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2"><b>Select Date</b></div>
+                                <!-- <div class="input-group col-lg-4 col-md-4" id="reportgenerate" style="margin-bottom: 20px;">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <input date-range-picker name="daterange5" class="date-picker" type="text"
+                                           ng-model="date" options="opts" style="padding: 3px;" required/>
+                                </div> -->
+                                <div id="reportrange1" class="col-md-4">
+                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                                    <span></span> <b class="caret"></b>
+                                </div>
+                            </div>
+                        <table class="table table-striped table-bordered table-hover order-column fulltable">
+                            <thead>
+                            <tr>
+                                <th class="tableheading" style="width: 50%;">For</th>
+                                <th class="tableheading">Export</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbodystyle">
+                            <!-- <tr class="odd gradeX">
+                                <td>Lab</td>
+                                <td><a type="button" id="export" class="btn blue-ebonyclay" (click)="callDateApply1()">Export Excel</a></td>
+                            </tr> -->
+                        <tr class="odd gradeX">
+                            <td>Projects</td>
+                            <td><a type="button" id="export" class="btn blue-ebonyclay" (click)="callDateApply3(tool)">Export Excel</a></td>
+                        </tr>
+                        <!-- <tr class="odd gradeX">
+                            <td>Users</td>
+                            <td><a type="button" id="export" class="btn blue-ebonyclay" (click)="getUserReport(tool)">Export Excel</a></td>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End: life time stats -->
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+
+</div>
+<div>
+    <!-- BEGIN MAIN CONTENT -->
+    <div class="row">
+        <div class="col-md-12  headingsss">
+            <div class="portlet light portlet-fit bordered">
+                <div class="row">
+                    <!-- <div class="caption">
+                        <span class="fa fa-table font-green"></span>
+                        <span class="caption-subject font-green bold uppercase">Tool Report</span>
+
+                    </div> -->
+                    <div class="headingStyle11 col-md-7" style="margin-right: 150px;">
+                        <span class="fa fa-table font-green"></span>
+                        <span>Tool Report</span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-icon right">
+                            <i class="icon-magnifier"></i>
+                            <input type="text"  ng-model="q" id="search" class="form-control input-circle searchfont" placeholder="search..." maxlength="50"  [(ngModel)]="term"> </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="portlet-body" id="toolReportTable">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2"><b>Select Date</b></div>
+                        <!-- <div class="input-group col-lg-4 col-md-4" id="toolreportgenerate" style="margin-bottom: 20px">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            <input date-range-picker name="daterange5" class="date-picker" type="text"
+                                   ng-model="date" options="opts" style="padding: 3px;" required/>
+                        </div> -->
+                        <div id="reportrange2" class="col-md-4">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                            <span></span> <b class="caret"></b>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered 
+                    table-hover order-column fulltable">
+                        <thead>
+                        <tr>
+                            <th style="text-align: center">Tool Name</th>
+                            <th style="text-align: center;width: 50%;">Export</th>
+                        </tr>
+                        </thead>
+                        <tbody class="tbodystyle">
+                        <!-- <tr class="odd gradeX" dir-paginate="tool in tools | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="toolsPagination" > -->
+                            <tr *ngFor="let cat1 of toolsid | filter:term | 
+                            orderBy: order:reverse:'case-insensitive' |
+                             paginate: {itemsPerPage: pageSize,
+                              currentPage: p,totalItems: total};">
+                              <td>{{ cat1.name }}</td>
+                            
+                            <td><a type="button" id="export" class="btn blue-ebonyclay" (click)="callDateApply5(trend,cat1.id)">Export Excel</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-xs-12 col-12" style="    text-align: center;
+    margin: 29px 0px 0px 0px;
+    font-size: 18px;">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+                    <!-- <dir-pagination-controls boundary-links="true" pagination-id="toolsPagination" on-page-change="pageChangeHandler(newPageNumber)" template-url="templates/shared/dirPagination.tpl.html"></dir-pagination-controls> -->
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<script>
+    TableDatatablesManaged.init();
+</script>
+

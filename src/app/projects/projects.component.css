@@ -1,0 +1,171 @@
+.theadstyle th{
+    text-align: center;
+}
+
+.theadstyle {
+    background: darkslategray;
+color: snow;
+
+}
+
+.theadstyle tr th{
+    cursor: pointer;
+}
+.mySearch:focus {
+    width: 50%;
+}
+.searchfont{
+    border-radius: 20px;
+    width: 38%;
+    float: right;
+   
+
+border: 2px solid #ccc;
+
+height: 37px;
+padding: 12px 20px 12px 40px;
+
+outline: none;
+}
+
+.headingsss{
+   
+    margin: 16px;
+    border: 1px solid white;
+    padding: 20px;
+    box-shadow: 2px 3px 15px 2px #ccc;    
+}
+.tbodystyle{
+    color:#02111dc4;
+        font-family: Bree Serif;
+    }
+    .headingStyle{
+      
+        font-weight: bold;
+        color: darkcyan;
+        font-size:20px;
+    }
+    /* .portlet-title{
+        margin: 33px 0px 23px 0px;
+    } */
+    .adddelete{
+        background: #599bb3bd;
+    font-size: 15px;
+    font-weight: bolder;
+    outline: none;
+    height: 42px;
+    border-radius: 26px;
+    float: right;
+    margin-right: 22px;
+    }
+
+    .assign{
+        margin:20px;
+        background:#599bb3bd;
+        font-weight:bold;
+        color:white;
+        font-size:15px;
+    }
+    .green{
+        background: #4681b4d6;
+    color: white;
+    width: 73px;
+    font-weight: bold;
+    }
+    .default{
+        background: #db4b14cc;
+        color: white;
+        width: 73px;
+        font-weight: bold;
+    }
+
+
+    /* .mycaption{
+        padding: 11px 1px 24px 19px;
+        border: 1px solid cadetblue;
+        box-shadow: 0px 3px 9px 0px #00000026;
+        margin-bottom: 16px;
+        border-radius: 0px 57px 5px;
+        background: aliceblue;
+    } */
+    
+    /* .mycaption .upercase{
+        color: darkcyan;
+        font-family: Bree Serif;
+        font-size: 18px;
+    } */
+    
+    /* select[multiple], select[size] {
+        height: 193px;
+    }
+    
+    select[multiple], select[size] option{
+        margin: 6px 0px 6px 0px;
+    } */
+
+    /* .icon-margin{
+        margin: 8px 0px 8px 0px;
+        font-family: Bree serif;
+    }
+    
+    
+    .icon-margin div{
+        margin-right: 10px;
+    }
+    
+    .icon-body{
+        background: ghostwhite;
+        padding: 35px 42px 21px 35px;
+    } */
+    /* .bottom-button button{
+        background: steelblue;
+        color: snow;
+        font-size: 19px;
+        font-family: Bree sans-serif;
+        font-weight: bold;
+        box-shadow: 0px 3px 9px 0px #00000026;
+    } */
+
+    /* .bottom-button{
+        border-top: 1px solid #00000040;
+        margin-top: 34px;
+        padding: 23px 0px 0px 0px;
+        text-align: center;
+    } */
+
+    /* .scroller{
+        background: aliceblue;
+        overflow-y: auto;
+        height: 224px;
+        padding: 12px 0px 0px 40px;
+        border: 1px solid cadetblue;
+        border-top-left-radius: 37px;
+        margin-top: 34px;
+        box-shadow: 0px 3px 9px 0px #00000029;
+    } */
+    
+    /* .myselect-style{
+        border: 1px solid cadetblue;
+        background: aliceblue;
+        margin-top: 23px;
+        padding: 16px 0px 0px 8px;
+        font-family: Bree serif;
+        height: 224px;
+        border-top-left-radius: 31px;
+        box-shadow: 0px 3px 9px 0px #00000029;
+    } */
+
+    /* .mymodal-header{
+        background: steelblue;
+    text-align: center;
+    color: white;
+    padding: 23px 18px 23px 0px;
+    font-family: Bree serif;
+    background: #5297ac;
+    }
+
+    .modal-title button span {
+        color: black;
+        font-size: 34px;
+        font-weight: bolder;
+    } */

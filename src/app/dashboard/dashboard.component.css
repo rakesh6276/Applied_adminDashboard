@@ -1,0 +1,93 @@
+.dashLeft{
+    list-style: none;
+    background-image: url("/assets/images/sideback.png");
+    color: white;
+    font-weight: bold;
+    margin-left: -69px;
+    height: 1559px;
+    }
+
+.dashLeft li{
+    padding: 30px 0px 32px 34px;
+	transition-property: font-size;
+	transition-duration: 0.15s;
+    transition-timing-function: ease;
+    font-size:15px;
+   }
+
+.dashLeft li:hover {
+    background: #0000003b;
+    font-size:17px;
+   }
+
+   .activelinking li {
+    background: #0000003b;
+    
+   }
+
+.dashLeft a{
+       text-decoration: none;
+    color: white;
+    cursor: pointer;
+    }
+
+.dashLeft svg{
+    font-size: 18px;
+    margin: 0px 10px 0px 0px;
+    }
+
+.dashLeft span{
+    font-size: 18px;
+    margin: 0px 10px 0px 0px;
+    }
+
+.dashLeft li:active {
+    background: #0000003b;
+   }
+
+   #headermargin img {
+    width: 201px;
+    height: 69px;
+}
+.navbar-inverse{
+    background: white;
+    border-color: white;
+    box-shadow: 0px 0px 30px 1px #00000036;
+    height: 93px;
+}
+
+#headermargin .navbar-header{
+  margin: -6px 0px 0px 35px;
+}
+
+#myNavbar ul {
+    margin: 18px 14px 0px 0px;
+}
+
+#loginbuttonstyle {
+    background: green;
+    color: white;
+    padding: 13px 27px 19px 19px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#loginbuttonstyle:hover {
+	background: #00800066;
+}
+
+
+   @media (min-width: 800px) and (max-width: 1440px) {
+    .dashLeft li{
+        font-size: 10px;
+    }
+
+    .dashLeft li:hover {
+        font-size: 12px;
+    }
+
+    .dashLeft{
+        margin-left: -79px;
+    }
+
+  }

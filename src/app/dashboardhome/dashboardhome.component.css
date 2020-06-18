@@ -1,0 +1,369 @@
+#homestyle {
+    margin-left: 18px;
+}
+.navbar-inverse {
+   background-color: white;
+   border-color: white;
+       box-shadow: 0px 0px 30px 1px #00000036;
+           height: 64px;
+}
+
+#loginbuttonstyle {
+
+   background: green;
+   color: white;
+   padding: 10px 26px 10px 18px;
+   
+
+   }
+
+#loginbuttonstyle:hover {
+   background: #00800066;
+}
+
+
+
+#headermargin img {
+       width: 127px;
+   height: 45px;
+}
+
+#headermargin .navbar-header{
+     margin: -6px 0px 0px 35px;
+}
+
+#myNavbar ul {
+       margin: 12px 14px 0px 0px;
+}
+
+
+.dashLeft{
+   list-style: none;
+   background-image: url("/assets/images/images/sideback.png");
+   color: white;
+   font-weight: bold;
+   margin-left: -54px;
+       height: 1081px;
+   }
+.dashLeft li{
+       padding: 30px 0px 32px 34px;
+       transition-property: font-size;
+       transition-duration: 0.15s;
+       transition-timing-function: ease;
+      }
+
+.dashLeft li:hover {
+   background: #0000003b;
+   font-size:16px;
+  }
+
+.dashLeft a{
+      text-decoration: none;
+   color: white;
+   cursor: pointer;
+   }
+
+.dashLeft i{
+   font-size: 18px;
+   margin: 0px 10px 0px 0px;
+   }
+
+   .dashLeft li:active {
+   background: #0000003b;
+  }
+
+  .theadstyle th{
+      text-align: center;
+  }
+
+  .addbuttonstyle {
+      text-align: right;
+  }
+
+  .toolsModal {
+          background: steelblue;
+   color: white;
+   font-weight: bold;
+   font-size: 19px;
+   text-align: center;
+   width: 599px;
+  }
+  #customModalbody .input-group {
+      margin: 20px 0px 20px 0px;
+   }
+
+
+   
+
+#selectMargin {
+       margin-top: 31px;
+   font-weight: bold;
+   margin-bottom: 34px;
+   color: dimgrey;
+
+}
+
+#customModalbody p{
+   color: dimgrey;
+   font-weight: bold;
+}
+
+.headingStyle{
+   margin: 33px 0px 0px 0px;
+   font-weight: bold;
+   color: darkcyan;
+}
+
+.tbodystyle{
+   color:#02111dc4;
+       font-family: Bree Serif;
+   }
+
+
+.headingStyle .ng-enter {
+ transition: 0.5s linear all;
+ opacity: 0;
+}
+.headingStyle .ng-enter.ng-enter-active {
+ opacity: 1;
+}
+
+table .ng-enter {
+ transition: 0.5s linear all;
+ opacity: 0;
+}
+
+table .ng-enter.ng-enter-active {
+ opacity: 1;
+}
+
+.thumbnail {
+   height: 220px;
+}
+
+.innerthumb {
+       border-right-width: 1px;
+   border-right-style: solid;
+   height: 218px;
+   color: #00000069;
+   margin: -4px 0px 0px 0px;
+}
+
+.mainconsole {
+   height: 200px;
+   margin: 37px 0px 0px 0px;
+   background: wheat;
+}
+
+.console1 {
+       height: 200px;
+   background: darkslategrey;
+   color: white;
+   font-weight: bold;
+   box-shadow: 0px 3px 37px 0px #00000054;
+   border-style: solid;
+   border-width: 1px;
+}
+
+.bays div {
+           background: #c14141e6;
+   color: white;
+   width: 125px;
+   height: 99px;
+   margin: 0px 0px 0px 0px;
+   float: left;
+   border-style: solid;
+   box-shadow: 0px 8px 20px 0px #00000059;
+   border-color: #00000045;
+}
+
+.bays {
+       background: #008000fc;
+           font-family: Bree Serif;
+           width: 375px;
+}
+
+.bays h4 {
+       margin: 37px 0px 0px 17px;
+       font-size: 19px;
+}
+
+.nullbays {
+    background: #008000fc;
+    font-family: Bree Serif;
+    overflow-y: scroll;
+    width: 390px;
+    height: 198px;
+}
+
+
+.nullbays div {
+    background: #c14141e6;
+color: white;
+width: 125px;
+height: 99px;
+margin: 0px 0px 0px 0px;
+float: left;
+border-style: solid;
+box-shadow: 0px 8px 20px 0px #00000059;
+border-color: #00000045;
+}
+
+
+.nullbays h4 {
+    margin: 37px 0px 0px 17px;
+    font-size: 19px;
+}
+
+.console1 h3 {
+       margin: 75px 0px 0px 93px;
+           font-family: PT Serif Caption;
+}
+
+#welcome{
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+   font-family: se;
+   font-style: oblique;
+   color: saddlebrown;
+   margin: 33px 0px 13px 0px;
+   text-shadow: -3px 5px 7px #00000030;
+}
+
+#dashButtons {
+text-align: right;
+margin-top: 42px;
+}
+
+#dashButtons button {
+       margin: 0px 8px 0px 3px;
+}
+
+
+.theadstyle {
+       background: darkslategray;
+   color: snow;
+
+}
+
+.pagination>.active>a {
+   background: #304f4f;
+   border-color: #304f4f;
+}
+.pagination>.active>a:hover{
+   background:#304f4fb5;
+   border-color: #304f4f;
+}
+
+.pagination>.active>a:focus{
+   background: #304f4f;
+}
+.pagination>li>a, .pagination>li>span {
+       color: black;
+}
+
+.mySearch {
+   width: 130px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   font-size: 16px;
+   background-color: white;
+   /* background-image: url('searchicon.png'); */
+   background-position: 10px 10px; 
+   background-repeat: no-repeat;
+   padding: 12px 20px 12px 40px;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
+}
+
+.mySearch:focus {
+   width: 100%;
+}
+
+:host >>> .popover {
+    background-color: #009688;
+    color: #fff;
+    font-weight: bold;
+  }
+  :host >>> .popover>.arrow:after {
+    border-top-color: #009688;
+  }
+
+
+  @media (min-width: 800px) and (max-width: 1652px) {
+  
+    .console1 h3 {
+        margin: 132px 0px 0px 49px;
+    }
+
+    .console1 {
+        height: 298px;
+    }
+
+    .bays {
+        background: #008000fc;
+        font-family: Bree Serif;
+        width: 250px;
+    }
+
+    .nullbays{
+        background: #008000fc;
+        font-family: Bree Serif;
+        width: 265px;
+        overflow-y: scroll;
+        height: 296px;
+    }
+
+    .mainconsole {
+        background:none;
+    }
+
+}
+
+
+@media (min-width: 1653px) and (max-width: 1796px) {
+  
+    console1 h3 {
+        margin: 90px 0px 0px 88px;
+    }
+
+    .console1 {
+        height: 199px;
+    }
+
+    .bays {
+        background: #008000fc;
+        font-family: Bree Serif;
+        width: 357px;
+    }
+
+    .bays div{
+        width: 119px;
+        height: 99px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .nullbays{
+        background: #008000fc;
+        font-family: Bree Serif;
+        width: 357px;
+        overflow-y: scroll;
+    }
+
+    .nullbays div{
+        width: 119px;
+        height: 99px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .mainconsole {
+        background:none;
+    }
+
+}
+
+
+
+ 

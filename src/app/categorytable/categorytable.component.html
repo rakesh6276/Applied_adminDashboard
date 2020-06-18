@@ -1,0 +1,111 @@
+<style>
+  
+  .process{
+    background-color: #aee9ca;
+}
+
+.quall{
+  background-color: rgb(125, 109, 196);
+}
+
+
+.fissue{
+  background-color: #ba4d4d;
+}
+
+.under{
+    background-color: rgba(239, 9, 9, 0.78);
+}
+
+.above{
+    background-color: rgba(140, 192, 19, 0.88);
+}
+
+
+</style>
+
+<div>
+    <div class="row">
+        <h3 class="headingStyle col-md-2">
+          <i class="fa fa-table"></i> Category Table</h3>
+        
+        <div id="reportrange" class="col-md-4" 
+        style=" margin: 33px 0px 0px 0px;">
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+            <span></span> <b class="caret"></b>
+        </div>
+
+         <input type="text" 
+         class=" col-md-2 mySearch searchfont"
+          name="search" placeholder="Search.."
+            [(ngModel)]="term">
+    </div>
+<div>
+
+</div>
+    <div class="table-responsive" style="margin: 25px 0px 0px 0px;">
+
+
+      
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="theadstyle">
+          <tr>
+            <th [class]="order === 'Tool_Name'"
+             (click)="setOrder('Tool_Name')">Tool Name <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span></th>
+            <th [class]="order === 'Bay_number'"
+            (click)="setOrder('Bay_number')">Bay No. <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span></th>
+            <th [class]="order === 'Tfirst_name'"
+            (click)="setOrder('Tfirst_name')">Tool Owner <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span></th>
+            <th [class]="order === 'Tool_Category'"
+            (click)="setOrder('Tool_Category')">Tool Category <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span></th>
+            <th [class]="order === 'Tool_Threshold'"
+            (click)="setOrder('Tool_Threshold')">Tool Target Utillization <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span></th>
+            <th [class]="order === 'Productive'"
+            (click)="setOrder('Productive')">Tool Utillization (%) <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span></th>
+          </tr>
+        </thead>
+        <tbody class="tbodystyle text-center">
+          <tr *ngFor="let cat of toolCat | filter:term | 
+          orderBy: order:reverse:'case-insensitive' |
+           paginate: {itemsPerPage: pageSize,
+            currentPage: p,totalItems: total};">
+            
+            <td>{{ cat.Tool_Name }}</td>
+            
+            <td>{{ cat.Bay_number }}</td>
+            
+
+            <td>{{ cat.Tfirst_name }} {{ cat.Tlast_name}}</td>
+            
+
+
+            <td [ngClass]="{'process' : cat.Tool_Category === 'Process', 'quall' : cat.Tool_Category === 'Qualifications', 'fissue' : cat.Tool_Category === 'Field Issues'}">{{ cat.Tool_Category }}</td>
+           
+            
+
+            <td>{{ cat.Tool_Threshold }} %</td>
+                      
+
+            <td [ngClass]="{'under' : cat.Tool_efficiency === false, 'above' : cat.Tool_efficiency === true}">{{ cat.Productive | number:'1.2-2'}} %</td>
+          </tr>
+          <!-- <tr>
+            <td *ngIf="term?.length == 0" colspan="10">No Records Found</td>
+          </tr> -->
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-xs-12 col-12" style="    text-align: center;
+    margin: 29px 0px 0px 0px;
+    font-size: 18px;">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+
+  </div>

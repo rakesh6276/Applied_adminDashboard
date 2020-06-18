@@ -1,0 +1,21 @@
+.headingStyle{
+    margin: 33px 0px 0px 0px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+
+@media (min-width: 800px) and (max-width: 1440px) {
+    :host /deep/ ng2-smart-table {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1796px) {
+    :host /deep/ ng2-smart-table {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+     

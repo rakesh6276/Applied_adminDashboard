@@ -1,0 +1,74 @@
+
+.headingStyle11{
+    font-size: 36px;
+    font-family: Bree serif;
+    /* margin: 36px 0px 6px 10px; */
+    color: darkcyan;
+    font-variant: petite-caps;
+    
+}
+.headingsss{
+   
+    margin: 16px;
+    border: 1px solid white;
+    padding: 20px;
+    box-shadow: 2px 3px 15px 2px #ccc;    
+}
+.tableheading{
+text-align: center;
+ font-size: 15px;
+}
+
+.theadstyle th{
+    text-align: center;
+}
+
+.theadstyle{
+    background: darkslategray;
+color: snow;
+
+}
+
+
+.fulltable{
+    margin-top: 20px;
+    border-style: 1px solid black;
+    border: 2px solid #ccc;
+    text-align: center; 
+}
+/* .searchfont{
+    border-radius: 20px;
+    width: 38%;
+    float: right;
+} */
+.adddelete{
+    background: #599bb3bd;
+font-size: 15px;
+font-weight: bolder;
+outline: none;
+height: 42px;
+border-radius: 26px;
+float: right;
+margin-right: 22px;
+}
+.tbodystyle{
+    color:#02111dc4;
+        font-family: Bree Serif;
+    }
+    .mySearch:focus {
+        width: 50%;
+    }
+    .searchfont{
+        border-radius: 20px;
+        width: 38%;
+        float: right;
+       
+    
+    border: 2px solid #ccc;
+    
+    height: 37px;
+    padding: 12px 20px 12px 40px;
+    
+    outline: none;
+    }
+   

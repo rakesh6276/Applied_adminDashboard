@@ -1,0 +1,63 @@
+.headingStyle{
+    margin: 33px 0px 0px 0px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.theadstyle th{
+    text-align: center;
+}
+
+.theadstyle {
+    background: darkslategray;
+color: snow;
+
+}
+
+.theadstyle tr th{
+    cursor: pointer;
+}
+
+.tbodystyle{
+    color:#02111dc4;
+        font-family: Bree Serif;
+    }
+
+    .mySearch:focus {
+        width: 20%;
+    }
+    .searchfont{
+        margin: 33px 0px 0px 0px;
+        border-radius: 20px;
+        width: 16%;
+        float: right;
+       
+    
+    border: 2px solid #ccc;
+   
+    height: 37px;
+    padding: 12px 20px 12px 40px;
+   
+    outline: none;
+    }
+    #reportrange {
+        background: #fff;
+        /* margin: 50px 0px 50px 20px;  */
+        cursor: pointer; padding: 5px 10px;
+        border: 1px solid #ccc;
+        width: 30%;
+        text-align: center;
+        box-shadow: 0px 4px 9px 0px #00000021
+    }
+
+    @media (min-width: 800px) and (max-width: 1440px) {
+        #responsiveFont{
+            font-size: 15px;
+        }
+    }
+
+    @media (min-width: 1441px) and (max-width: 1796px) {
+        #responsiveFont{
+            font-size: 15px;
+        }
+    }

@@ -1,0 +1,13 @@
+.headingStyle{
+      
+    font-weight: bold;
+    color: darkcyan;
+    font-size:20px;
+}
+#reportrange {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 2px solid #ccc;
+    width: 18%;
+}

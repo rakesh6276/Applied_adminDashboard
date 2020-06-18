@@ -1,0 +1,120 @@
+#reportrange {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 18%;
+}
+#reportrange1 {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 18%;
+}
+#reportrange2 {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 18%;
+}
+.headingStyle11{
+    font-size: 36px;
+    font-family: Bree serif;
+    /* margin: 36px 0px 6px 10px; */
+    color: darkcyan;
+    font-variant: petite-caps;
+    
+}
+
+.theadstyle th{
+    text-align: center;
+}
+
+.theadstyle{
+    background: darkslategray;
+color: snow;
+
+}
+
+.tbodystyle{
+    color:#02111dc4;
+        font-family: Bree Serif;
+    }
+
+
+
+.headingsss{
+   
+    margin: 16px;
+    border: 1px solid white;
+    padding: 20px;
+    box-shadow: 2px 3px 15px 2px #ccc;    
+}
+.tableheading{
+text-align: center;
+ font-size: 15px;
+}
+.fulltable{
+    margin-top: 20px;
+    border-style: 1px solid black;
+    border: 2px solid #ccc;
+    text-align: center; 
+}
+.searchfont{
+    border-radius: 20px;
+    width: 63%;
+    float: right;
+}
+#reportrange {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 18%;
+}
+#reportrange1 {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 18%;
+}
+#reportrange2 {
+    background: #fff;
+    /* margin: 50px 0px 50px 20px;  */
+    cursor: pointer; padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 18%;
+}
+.headingStyle11{
+    font-size: 36px;
+    font-family: Bree serif;
+    /* margin: 36px 0px 6px 10px; */
+    color: darkcyan;
+    font-variant: petite-caps;
+    
+}
+.headingsss{
+   
+    margin: 16px;
+    border: 1px solid white;
+    padding: 20px;
+    box-shadow: 2px 3px 15px 2px #ccc;    
+}
+.tableheading{
+text-align: center;
+ font-size: 15px;
+}
+.fulltable{
+    margin-top: 20px;
+    border-style: 1px solid black;
+    border: 2px solid #ccc;
+    text-align: center; 
+}
+.searchfont{
+    border-radius: 20px;
+    width: 63%;
+    float: right;
+}

@@ -1,0 +1,121 @@
+.headingStyle{
+    margin: 33px 0px 0px 0px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+#selectMargin {
+    margin-top: 31px;
+font-weight: bold;
+margin-bottom: 34px;
+color: dimgrey;
+
+}
+
+.checkbox {
+    color: #4681b4;
+}
+
+/* .mycaption{
+    padding: 11px 1px 24px 19px;
+    border: 1px solid #0000002b;
+    box-shadow: 0px 2px 3px 0px #00000026;
+    margin-bottom: 16px;
+    border-radius: 15px 50px 30px;
+}
+
+.mycaption .upercase{
+    color: darkcyan;
+    font-family: Bree Serif;
+    font-size: 18px;
+} */
+
+/* select[multiple], select[size] {
+    height: 193px;
+}
+
+select[multiple], select[size] option{
+    margin: 6px 0px 6px 0px;
+} */
+
+/* .scroller:nth-child(2) {
+    margin: 8px 0px 8px 0px;
+}
+
+
+.scroller:nth-child(0) {
+    text-align: right; 
+    margin: 8px 0px 8px 0px;
+} */
+
+/* .icon-margin{
+    margin: 8px 0px 8px 0px;
+    font-family: Bree serif;
+}
+
+
+.icon-margin div{
+    margin-right: 10px;
+}
+
+.icon-body{
+    background: ghostwhite;
+    padding: 35px 42px 21px 35px;
+} */
+
+.theadstyle th{
+    text-align: center;
+}
+
+.theadstyle{
+    background: darkslategray;
+color: snow;
+
+}
+
+.tbodystyle{
+    color:#02111dc4;
+        font-family: Bree Serif;
+    }
+
+    /* .mySearch {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    } */
+    
+    .mySearch:focus {
+        width: 20%;
+    }
+    .searchfont{
+        border-radius: 20px;
+        width: 16%;
+    border: 2px solid #ccc;
+    height: 37px;
+    padding: 12px 20px 12px 40px;
+   
+    outline: none;
+    margin-top:20px;
+
+    }
+
+    .searchfont1{
+        width: 38%;
+    }
+
+
+    .assign{
+        margin:20px;
+        font-weight:bold;
+        font-size:15px;
+        color:white;
+        background:#4681b4;
+    }
