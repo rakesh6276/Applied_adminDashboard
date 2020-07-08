@@ -34,7 +34,7 @@ interface Tools{
   styleUrls: ['./tools.component.css']
 })
 export class ToolsComponent implements OnInit, OnDestroy {
-  toolsprojects: any=[];
+  toolsprojects = new Array();
   projectsid: any;
   toolsusers = new Array();
  
@@ -248,8 +248,14 @@ toolassignusers(details,id){
    });
 }
 projectstool(names){
-  this.toolsprojects=names;
+  this.toolsprojects = [];
+  for(let i = 0; i< names.target.selectedOptions.length; i++){
+    this.toolsprojects.push({
+      'id' : names.target.selectedOptions[i].value,
+    });
+    }
 }
+
 assignprojecttool(toolprojects:TemplateRef<any>,tooldetails){
   this.tools=tooldetails;
   this._dashserve.sendIdGetProjects(tooldetails.id).subscribe(data=>{

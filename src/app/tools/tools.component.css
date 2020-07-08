@@ -16,6 +16,11 @@ color: dimgrey;
     color: #4681b4;
 }
 
+
+button.btn{
+    margin: 1px 7px 13px 9px;
+
+}
 /* .mycaption{
     padding: 11px 1px 24px 19px;
     border: 1px solid #0000002b;

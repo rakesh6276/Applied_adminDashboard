@@ -9,13 +9,12 @@
     <div class="row">
         <input type="text" class=" col-md-2 mySearch searchfont" name="search" placeholder="Search.."  [(ngModel)]="term">
     </div>
-
      <hr>
     
      <!-- <div style="margin: 25px 0px 0px 0px;">
           <ng2-smart-table [settings]="settings" [source]="movebay" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>
-          </div>  -->
-          
+          </div>   -->
+           
     
     <div>
     
@@ -697,8 +696,11 @@
                                 <!-- <div class="portlet-body"> -->
                                     <div class="scroller"  data-always-visible="1" data-rail-visible="1">
                                         <!-- <ul class="feeds"> -->
-                                            <li *ngFor="let toolusersdetails of assignedtoolsusers" style="list-style: none;"> 
-                                                         <div class="cont-col1 ">
+                                            <li *ngFor="let toolusersdetails of assignedtoolsusers; let i = index" 
+                                            (click) ="assignedtoolsusers.splice(i, 1)">
+                                                    {{toolusersdetails.first_name}} {{toolusersdetails.last_name}}    
+                                                   &nbsp;&nbsp; <button type="button" class="btn btn-danger bt-sm">Delete</button>
+                                            
                                                             <!-- <div class="col-md-4" > -->
                                                             
                                                         <!-- </div> -->
@@ -709,10 +711,21 @@
                                                                         
                                                                     </div> -->
                                                                     
-                                                                    <input type="checkbox" id="checkbox2" > &nbsp;
-                                                           {{toolusersdetails.first_name}} &nbsp;{{toolusersdetails.last_name}}
-                                                           
-                                                        </div>
+                                                                    
+                                                        <!-- <input type="checkbox" id="checkbox2">
+                                                           {{toolusersdetails.first_name}} 
+                                                            {{toolusersdetails.last_name}} -->
+                                                           <!-- <input type="text" [(ngModel)]="toolusersdetails.first_name"
+                                                            [(ngModel)] = "toolusersdetails.last_name"/> -->
+                                                            
+                                                           <!-- <button (click)="toolusersdetails.isEditable=!toolusersdetails.isEditable"
+                                                            *ngIf="!toolusersdetails.isEditable">Edit</button>
+                                                            <button *ngIf="toolusersdetails.isEditable" 
+                                                            (click)="toolusersdetails.isEditable=!toolusersdetails.isEditable">Save</button>&nbsp; -->
+                                                            
+
+
+                                                    
                                             </li>
                                         <!-- </ul> -->
                                     </div>
@@ -801,18 +814,11 @@
                                 <!-- <div class="portlet-body"> -->
                                     <div class="scroller"  data-always-visible="1" data-rail-visible="1">
                                         <!-- <ul class="feeds"> -->
-                                            <li *ngFor="let projectsdetails of toolsprojects" style="list-style: none;">
-                                                        <!-- <div class="cont-col1 "> -->
-                                                            <!-- <div class="col-md-4" > -->
-                                                            
-                                                        <!-- </div> -->
-                                                        <!-- <div class="cont-col2"> -->
-                                                        <div class="col-md-12 icon-margin">
-                                                                <div class="label label-sm label-info">
-                                                                        <i class="fa fa-user"></i>
-                                                                    </div>
-                                                           {{projectsdetails.project_name}}{{projectsdetails.name}}
-                                                        </div>
+                                            <li *ngFor="let projectsdetails of toolsprojects; let i = index"
+                                                (click) ="toolsprojects.splice(i, 1)">
+                                                    {{projectsdetails.project_name}}     
+                                                    &nbsp;&nbsp; <button type="button" class="btn btn-danger bt-sm">Delete</button>
+                                            
                                             </li>
                                         <!-- </ul> -->
                                     </div>
