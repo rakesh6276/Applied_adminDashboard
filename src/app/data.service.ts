@@ -18,7 +18,7 @@ export class DataService {
 
   apiRoot: string = "http://152.135.122.61:8871";
   
-  //apiRoot: string = "http://127.0.0.1:8000";
+  //apiRoot: string = "http://152.135.122.61:8871";
 
   //  idToken = localStorage.getItem('csrftoken');
   //  options = { headers: new HttpHeaders({'Authorization': 'JWT '+ this.idToken}) };
