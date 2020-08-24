@@ -320,12 +320,10 @@ callDateApply3(trend){
 
 
   callDateApply5(trend,id){
-
-    // let id:number;
      if(!trend){
        let trend2:object;
        trend2={startDate:this.start.format('YYYY-MM-DD'),endDate:this.end.format('YYYY-MM-DD')}
-       let downloadurl1 = 'http://152.135.122.61:8871/api/export_tools/'+id+'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+       let downloadurl1 = 'http://152.135.122.61:8871/api/export_tools/'+ id +'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
        window.open(downloadurl1);
       //  this._service.sendDateGetReprts(trend2).subscribe(data=>{
       //   //window.open(downloadurl1);
@@ -333,7 +331,7 @@ callDateApply3(trend){
     }
     else{
       //  let downloadurl2 = 'http://152.135.122.61:8871/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
-      let downloadurl2 = 'http://152.135.122.61:8871/api/export_tools/'+id+'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+      let downloadurl2 = 'http://152.135.122.61:8871/api/export_tools/'+ id +'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
       window.open(downloadurl2);
       }
     }
