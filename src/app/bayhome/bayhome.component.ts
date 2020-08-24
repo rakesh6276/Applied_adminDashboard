@@ -143,6 +143,63 @@ export class BayhomeComponent implements OnInit {
                 }
                 })
 
+                this.bay6A =  this._toolsListed.filter(data=>{
+                  return data.bay_number=='6A' && data.is_active == true
+                });
+                  this.bay6A.forEach(function (value) {
+                  if(value.status === 'IN'){
+                    $('#bay6A').css({fill: "#ffff80"});
+                  }
+                  else if (value.status === 'ID') {
+                    $('#bay6A').css({fill: "#ff7f7f"});
+                  }
+                  else if (value.status === 'PR') {
+                    $('#bay6A').css({fill: "#c2de80"});
+                  }
+                  else if (value.status === 'MA') {
+                    $('#bay6A').css({fill: "#9ac3f5"});
+                  }
+                  })
+
+                  this.bay6B =  this._toolsListed.filter(data=>{
+                    return data.bay_number=='6B' && data.is_active == true
+                  });
+                    this.bay6B.forEach(function (value) {
+                    if(value.status === 'IN'){
+                      $('#bay6B').css({fill: "#ffff80"});
+                    }
+                    else if (value.status === 'ID') {
+                      $('#bay6B').css({fill: "#ff7f7f"});
+                    }
+                    else if (value.status === 'PR') {
+                      $('#bay6B').css({fill: "#c2de80"});
+                    }
+                    else if (value.status === 'MA') {
+                      $('#bay6B').css({fill: "#9ac3f5"});
+                    }
+                    })
+
+                    this.bay6C =  this._toolsListed.filter(data=>{
+                      return data.bay_number=='6C' && data.is_active == true
+                    });
+                      this.bay6C.forEach(function (value) {
+                      if(value.status === 'IN'){
+                        $('#bay6C').css({fill: "#ffff80"});
+                      }
+                      else if (value.status === 'ID') {
+                        $('#bay6C').css({fill: "#ff7f7f"});
+                      }
+                      else if (value.status === 'PR') {
+                        $('#bay6C').css({fill: "#c2de80"});
+                      }
+                      else if (value.status === 'MA') {
+                        $('#bay6C').css({fill: "#9ac3f5"});
+                      }
+                      })
+
+            
+
+
             this.bay7 =  this._toolsListed.filter(data=>{
               return data.bay_number==7 && data.is_active == true
             });
