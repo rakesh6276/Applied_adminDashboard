@@ -26,7 +26,7 @@
     "chart.js": "^2.7.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
-    "highcharts": "^6.0.7",
+    "highcharts": "^7.2.2",
     "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "ng-circle-progress": "^0.9.9",
