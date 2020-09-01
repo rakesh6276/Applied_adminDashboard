@@ -692,7 +692,7 @@ export class BayhomeComponent implements OnInit {
                         })
 
                     this.bay33 =  this._toolsListed.filter(data=>{
-                      return data.bay_number==33 && data.is_active == true
+                      return data.bay_number==32 && data.is_active == true
                     });
                       this.bay33.forEach(function (value) {
                       if(value.status === 'IN'){
