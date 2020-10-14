@@ -264,7 +264,7 @@ apiRoot: string = "http://152.135.122.61:8871";
 //     })
 
 
-this.http.get(this.apiRoot+'/api/tool_category_data/54/').subscribe(data =>{
+this.http.get(this.apiRoot+'/api/tool_category_data/53/').subscribe(data =>{
     console.log(data);
     this._labListed6A = data as [any];
     if (this._labListed6A.Tool_efficiency === false) {
@@ -299,7 +299,7 @@ this.http.get(this.apiRoot+'/api/tool_category_data/54/').subscribe(data =>{
 
 
   
-  this.http.get(this.apiRoot+'/api/tool_category_data/58/').subscribe(data =>{
+  this.http.get(this.apiRoot+'/api/tool_category_data/54/').subscribe(data =>{
       console.log(data);
       this._labListed6B = data as [any];
       if (this._labListed6B.Tool_efficiency === false) {
@@ -333,7 +333,7 @@ this.http.get(this.apiRoot+'/api/tool_category_data/54/').subscribe(data =>{
     })
 
 
-    this.http.get(this.apiRoot+'/api/tool_category_data/53/').subscribe(data =>{
+    this.http.get(this.apiRoot+'/api/tool_category_data/58/').subscribe(data =>{
       console.log(data);
       this._labListed6C = data as [any];
       if (this._labListed6C.Tool_efficiency === false) {
@@ -1987,7 +1987,7 @@ this.http.get(this.apiRoot+'/api/tool_category_data/54/').subscribe(data =>{
     })
 
 
-    this.http.get(this.apiRoot+'/api/tool_category_data/111/').subscribe(data =>{
+    this.http.get(this.apiRoot+'/api/tool_category_data/58/').subscribe(data =>{
       this._labListed43 = data as [any];
       if (this._labListed43.Tool_efficiency === false) {
         $('#lab43').css({fill: "rgba(239, 9, 9, 0.78)"});
