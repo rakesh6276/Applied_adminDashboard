@@ -94,6 +94,10 @@ export class DashboardhomeComponent implements OnInit,OnDestroy {
         this.console8 = this.toolList.filter(data => {
         return data.bay==258 && data.is_active == true});
 
+        // this.console9 = this.toolList.filter(data => {
+        // return data.bay==258 && data.is_active == true});
+  
+
         this.nullconsole = this.toolList.filter(data => {
         return data.bay==257 && data.is_active == false});
 

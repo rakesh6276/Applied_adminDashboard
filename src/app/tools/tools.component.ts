@@ -220,7 +220,15 @@ userstool(names){
     }
 }
 
-
+projectstool(names){
+  console.log(names);
+  this.toolsprojects = [];
+  for(let i = 0; i< names.target.selectedOptions.length; i++){
+    this.toolsprojects.push({
+      'id' : names.target.selectedOptions[i].value,
+    });
+    }
+}
 
 assignuserstool(toolusers: TemplateRef<any>,tooldetails){
   this.tools=tooldetails;
@@ -229,6 +237,15 @@ assignuserstool(toolusers: TemplateRef<any>,tooldetails){
   })
 
   this.modalRef=this._modalservice.show(toolusers,{class:'modal-lg'})
+}
+
+assignprojecttool(toolprojects:TemplateRef<any>,tooldetails){
+  this.tools=tooldetails;
+  this._dashserve.sendIdGetProjects(tooldetails.id).subscribe(data=>{
+    this.toolsprojects = data;
+  });
+  this.modalRef=this._modalservice.show(toolprojects,{class:'modal-lg'})
+
 }
 
 toolassignusers(details,id){
@@ -247,23 +264,7 @@ toolassignusers(details,id){
    this._dashserve.toolassignusers(userobjects,id).subscribe(data=>{
    });
 }
-projectstool(names){
-  this.toolsprojects = [];
-  for(let i = 0; i< names.target.selectedOptions.length; i++){
-    this.toolsprojects.push({
-      'id' : names.target.selectedOptions[i].value,
-    });
-    }
-}
 
-assignprojecttool(toolprojects:TemplateRef<any>,tooldetails){
-  this.tools=tooldetails;
-  this._dashserve.sendIdGetProjects(tooldetails.id).subscribe(data=>{
-    this.toolsprojects = data;
-  });
-  this.modalRef=this._modalservice.show(toolprojects,{class:'modal-lg'})
-
-}
 toolassignprojects(details,id){
   this.test1 = this.selectprojects;
   let details2 =[];
@@ -271,19 +272,19 @@ toolassignprojects(details,id){
    details2.push(details[i]['id']);
   }
     console.log(this.toolsprojects);
-    
-   for(let i=0;i<this.toolsprojects.length;i++){
+  for(let i=0;i<this.toolsprojects.length;i++){
     details2.push(this.toolsprojects[i]['id'])
   
   }
   console.log(details2);
-  
   let totaldetail:object;
   totaldetail = {'project_ids':details2};
      this._dashserve.toolprojects(totaldetail,id).subscribe(data=>{
    });
 
   }
+
+
 
 swapTools(data){
   var temp1 = data.too1.bay;

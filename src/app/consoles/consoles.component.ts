@@ -23,14 +23,6 @@ settings = {
   },
   columns: {
 
-    // id: {
-    //   title: 'ID',
-    // },
-
-
-
-    
-
     name: {
       title: 'Console Name',
     },

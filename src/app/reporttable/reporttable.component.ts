@@ -9,9 +9,6 @@ import { formatDate } from 'ngx-bootstrap/chronos';
 declare var jquery:any;
 declare var $ :any;
 
-
-
-
 @Component({
   selector: 'app-reporttable',
   templateUrl: './reporttable.component.html',
@@ -323,15 +320,18 @@ callDateApply3(trend){
      if(!trend){
        let trend2:object;
        trend2={startDate:this.start.format('YYYY-MM-DD'),endDate:this.end.format('YYYY-MM-DD')}
+       console.log("date",trend2)
        let downloadurl1 = 'http://152.135.122.61:8871/api/export_tools/'+ id +'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+      //  console.log("data", downloadurl2)
        window.open(downloadurl1);
       //  this._service.sendDateGetReprts(trend2).subscribe(data=>{
       //   //window.open(downloadurl1);
       // })
     }
     else{
-      //  let downloadurl2 = 'http://152.135.122.61:8871/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
-      let downloadurl2 = 'http://152.135.122.61:8871/api/export_tools/'+ id +'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+       let downloadurl2 = 'http://152.135.122.61:8871/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
+      console.log("data", downloadurl2)
+      // let downloadurl2 = 'http://152.135.122.61:8871/api/export_tools/'+ id +'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
       window.open(downloadurl2);
       }
     }

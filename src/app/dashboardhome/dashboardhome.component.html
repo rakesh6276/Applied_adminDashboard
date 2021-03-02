@@ -131,23 +131,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6">
-			<div class="row mainconsole">
-				<div class="col-md-6 console1">
-    				<div class="row">
-						<h3><i class="fa fa-flask"></i> Null Console</h3>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="row nullbays">
-						<div *ngFor="let bayno of nullconsole" popover="{{bayno.name}}"
-						triggers="mouseenter:mouseleave">
-							<h4>Bay {{bayno.bay_number}}</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 
 
 		<div class="col-md-6">
@@ -168,6 +152,42 @@
 			</div>
 		</div>
 
+		<!-- <div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Console 9</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row bays">
+						<div *ngFor="let bayno of console9" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+
+		<div class="col-md-6">
+			<div class="row mainconsole">
+				<div class="col-md-6 console1">
+    				<div class="row">
+						<h3><i class="fa fa-flask"></i> Null Console</h3>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row nullbays">
+						<div *ngFor="let bayno of nullconsole" popover="{{bayno.name}}"
+						triggers="mouseenter:mouseleave">
+							<h4>Bay {{bayno.bay_number}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		 
 
